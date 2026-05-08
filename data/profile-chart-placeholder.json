@@ -1,0 +1,41 @@
+{
+  "dimensionOrder": ["social", "economy", "environment", "transport"],
+  "profiles": [
+    {
+      "name": "画像一：海外留学生",
+      "stacks": [
+        { "key": "social", "label": "社会", "value": 20 },
+        { "key": "economy", "label": "经济", "value": 35 },
+        { "key": "environment", "label": "环境", "value": 10 },
+        { "key": "transport", "label": "交通", "value": 35 }
+      ]
+    },
+    {
+      "name": "画像二：都市上班族",
+      "stacks": [
+        { "key": "social", "label": "社会", "value": 15 },
+        { "key": "economy", "label": "经济", "value": 40 },
+        { "key": "environment", "label": "环境", "value": 10 },
+        { "key": "transport", "label": "交通", "value": 35 }
+      ]
+    },
+    {
+      "name": "画像三：带娃家庭 / 旅居客",
+      "stacks": [
+        { "key": "social", "label": "社会", "value": 35 },
+        { "key": "economy", "label": "经济", "value": 15 },
+        { "key": "environment", "label": "环境", "value": 35 },
+        { "key": "transport", "label": "交通", "value": 15 }
+      ]
+    },
+    {
+      "name": "画像四：退休长者",
+      "stacks": [
+        { "key": "social", "label": "社会", "value": 30 },
+        { "key": "economy", "label": "经济", "value": 10 },
+        { "key": "environment", "label": "环境", "value": 45 },
+        { "key": "transport", "label": "交通", "value": 15 }
+      ]
+    }
+  ]
+}

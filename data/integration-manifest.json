@@ -1,0 +1,45 @@
+{
+  "description": "主站整合清单：记录四个子项目的入口和核心数据位置，供后续统一打包或改造。",
+  "projects": [
+    {
+      "name": "population",
+      "chapter": "第一篇章：社会底色",
+      "codeEntry": "./apps/01-population-yearly/index.html",
+      "dataPaths": [
+        "./apps/04-safety-linebox/data/crime_stats_zipcode.json",
+        "./apps/02-population-rings/data/zip_population_merged.geojson"
+      ],
+      "targetEmbed": "./apps/01-population-yearly/index.html"
+    },
+    {
+      "name": "economy",
+      "chapter": "第二篇章：经济账本",
+      "codeEntry": "./apps/05-economy/index.html",
+      "dataPaths": [
+        "./apps/05-economy/nyc_master_data.json"
+      ],
+      "targetEmbed": "./apps/05-economy/index.html"
+    },
+    {
+      "name": "transportation",
+      "chapter": "第三篇章：时空脉搏",
+      "codeEntry": "./apps/06-transport/index.html",
+      "dataPaths": [
+        "./apps/06-transport/nyc_zipcodes.geojson",
+        "./apps/06-transport/subway_day.json",
+        "./apps/06-transport/stations_location.csv"
+      ],
+      "targetEmbed": "./apps/06-transport/index.html"
+    },
+    {
+      "name": "environment",
+      "chapter": "第四篇章：微观生态",
+      "codeEntry": "./apps/07-environment/index.html",
+      "dataPaths": [
+        "./output/final_data.environment.json",
+        "./output/facilities_by_zip.csv"
+      ],
+      "targetEmbed": "./apps/07-environment/index.html"
+    }
+  ]
+}

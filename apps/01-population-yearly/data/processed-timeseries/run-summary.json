@@ -1,0 +1,66 @@
+{
+  "succeededYears": [
+    {
+      "year": 2011,
+      "rows": 177
+    },
+    {
+      "year": 2012,
+      "rows": 177
+    },
+    {
+      "year": 2013,
+      "rows": 177
+    },
+    {
+      "year": 2014,
+      "rows": 177
+    },
+    {
+      "year": 2015,
+      "rows": 177
+    },
+    {
+      "year": 2016,
+      "rows": 177
+    },
+    {
+      "year": 2017,
+      "rows": 177
+    },
+    {
+      "year": 2018,
+      "rows": 177
+    },
+    {
+      "year": 2019,
+      "rows": 177
+    },
+    {
+      "year": 2020,
+      "rows": 177
+    },
+    {
+      "year": 2021,
+      "rows": 177
+    },
+    {
+      "year": 2022,
+      "rows": 177
+    },
+    {
+      "year": 2023,
+      "rows": 177
+    },
+    {
+      "year": 2024,
+      "rows": 177
+    }
+  ],
+  "failedYears": [
+    {
+      "year": 2010,
+      "error": "Command failed: powershell -NoProfile -Command $ProgressPreference='SilentlyContinue'; (Invoke-WebRequest -Uri \"https://api.census.gov/data/2010/acs/acs5?get=NAME,B01003_001E&for=zip%20code%20tabulation%20area:*&key=77a92d217a7bba35368b282a119505e9724cc3a0\" -TimeoutSec 90).Content\nInvoke-WebRequest : error: unknown/unsupported geography hierarchy\r\n����λ�� ��:1 �ַ�: 42\r\n+ ... Continue'; (Invoke-WebRequest -Uri \"https://api.census.gov/data/2010/ ...\r\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest]��WebExce\r\n    ption\r\n    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand\r\n"
+    }
+  ]
+}

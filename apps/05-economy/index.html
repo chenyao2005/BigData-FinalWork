@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var path = location.pathname;
+        if (path.endsWith("/index.html")) {
+          var dir = path.slice(0, -"index.html".length);
+          history.replaceState(null, "", dir + location.search + location.hash);
+        }
+        var href = new URL("./", window.location.href).href;
+        var b = document.createElement("base");
+        b.href = href;
+        var meta = document.querySelector("meta[charset]");
+        if (meta) meta.insertAdjacentElement("afterend", b);
+        else document.head.insertBefore(b, document.head.firstChild);
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nyc-pulse</title>
+    <script type="module" crossorigin src="./assets/index-CJyjUeet.js?v=20260507-indexpath"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-hCltcHGh.css?v=20260507-indexpath">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

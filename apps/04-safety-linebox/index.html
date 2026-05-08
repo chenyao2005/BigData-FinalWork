@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>纽约市公共安全水平：曲线图+箱线图</title>
+    <script type="module" crossorigin src="./assets/index-Dg8BkWQj.js?v=20260509-4300"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-u2_P38gt.css?v=20260509-4300">
+  </head>
+  <body>
+    <div id="app">
+      <div class="viz-frame">
+        <header class="viz-header">
+          <h1 class="viz-title">纽约市公共安全水平：曲线图+箱线图</h1>
+        </header>
+        <div class="viz-chart-area">
+          <div class="chart-shift-wrap">
+            <div id="chart"></div>
+          </div>
+          <div id="legend"></div>
+        </div>
+        <footer class="viz-footer">
+          <p class="viz-caption">
+            线：各区年度每千人案件数；<br />
+            淡色带：该区内 ZIP 离散范围（P20-P80）；<br />
+            右侧箱体：末年各 ZIP 分布（min/Q1/median/Q3/max）。
+          </p>
+        </footer>
+      </div>
+    </div>
+    <script type="module">
+      function applyChartShift() {
+        const svg = document.querySelector("#chart svg");
+        if (!svg) return;
+        svg.style.setProperty("transform", "scale(0.93) translateY(8px)", "important");
+        svg.style.setProperty("transform-origin", "top center", "important");
+      }
+      applyChartShift();
+      const chartEl = document.getElementById("chart");
+      if (chartEl) {
+        new MutationObserver(() => requestAnimationFrame(applyChartShift)).observe(chartEl, {
+          childList: true,
+          subtree: true
+        });
+      }
+    </script>
+  </body>
+</html>

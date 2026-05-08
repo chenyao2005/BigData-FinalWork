@@ -1,0 +1,46 @@
+{
+  "population_metrics": [
+    {
+      "id": "pop_2010",
+      "label": "2010 年人口（人）",
+      "unit": ""
+    },
+    {
+      "id": "pop_change_pct",
+      "label": "2000–2010 人口变化（%）",
+      "unit": "%"
+    },
+    {
+      "id": "pct_white",
+      "label": "非西语白人约占比（%）",
+      "unit": "%"
+    },
+    {
+      "id": "pct_black",
+      "label": "黑人约占比（%）",
+      "unit": "%"
+    },
+    {
+      "id": "pct_asian",
+      "label": "亚裔约占比（%）",
+      "unit": "%"
+    },
+    {
+      "id": "pct_hispanic",
+      "label": "西语裔约占比（%）",
+      "unit": "%"
+    },
+    {
+      "id": "school_per_100k",
+      "label": "估算学校数/每十万人（教育资源 proxy）",
+      "unit": ""
+    }
+  ],
+  "safety_metrics": [
+    {
+      "id": "crime_per_1000",
+      "label": "抽样内每千人记录数（相对指标）",
+      "unit": ""
+    }
+  ]
+}
