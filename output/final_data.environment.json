@@ -1,0 +1,1766 @@
+[
+  {
+    "zip_code": "10000",
+    "environment": {
+      "environment_score": 51.21,
+      "air_quality_score": 28.03,
+      "noise_score": 98.7,
+      "green_score": 20.255000000000003
+    }
+  },
+  {
+    "zip_code": "10001",
+    "environment": {
+      "environment_score": 42.44,
+      "air_quality_score": 28.03,
+      "noise_score": 80.94,
+      "green_score": 7.51
+    }
+  },
+  {
+    "zip_code": "10002",
+    "environment": {
+      "environment_score": 28.23,
+      "air_quality_score": 28.03,
+      "noise_score": 40.11,
+      "green_score": 7.9
+    }
+  },
+  {
+    "zip_code": "10003",
+    "environment": {
+      "environment_score": 32.6,
+      "air_quality_score": 28.03,
+      "noise_score": 45.56,
+      "green_score": 20.19
+    }
+  },
+  {
+    "zip_code": "10004",
+    "environment": {
+      "environment_score": 46.87,
+      "air_quality_score": 28.03,
+      "noise_score": 97.26,
+      "green_score": 1.07
+    }
+  },
+  {
+    "zip_code": "10005",
+    "environment": {
+      "environment_score": 45.49,
+      "air_quality_score": 28.03,
+      "noise_score": 93.51,
+      "green_score": 0.73
+    }
+  },
+  {
+    "zip_code": "10006",
+    "environment": {
+      "environment_score": 47.03,
+      "air_quality_score": 28.03,
+      "noise_score": 97.83,
+      "green_score": 0.86
+    }
+  },
+  {
+    "zip_code": "10007",
+    "environment": {
+      "environment_score": 43.92,
+      "air_quality_score": 28.03,
+      "noise_score": 88.23,
+      "green_score": 2.14
+    }
+  },
+  {
+    "zip_code": "10009",
+    "environment": {
+      "environment_score": 31.25,
+      "air_quality_score": 28.03,
+      "noise_score": 45.86,
+      "green_score": 12.91
+    }
+  },
+  {
+    "zip_code": "10010",
+    "environment": {
+      "environment_score": 44.11,
+      "air_quality_score": 28.03,
+      "noise_score": 85.79,
+      "green_score": 7.36
+    }
+  },
+  {
+    "zip_code": "10011",
+    "environment": {
+      "environment_score": 38.31,
+      "air_quality_score": 28.03,
+      "noise_score": 63.75,
+      "green_score": 16.92
+    }
+  },
+  {
+    "zip_code": "10012",
+    "environment": {
+      "environment_score": 35.99,
+      "air_quality_score": 28.03,
+      "noise_score": 63.28,
+      "green_score": 6.16
+    }
+  },
+  {
+    "zip_code": "10013",
+    "environment": {
+      "environment_score": 38.53,
+      "air_quality_score": 28.03,
+      "noise_score": 70.87,
+      "green_score": 5.58
+    }
+  },
+  {
+    "zip_code": "10014",
+    "environment": {
+      "environment_score": 40.56,
+      "air_quality_score": 28.03,
+      "noise_score": 68.23,
+      "green_score": 20.35
+    }
+  },
+  {
+    "zip_code": "10016",
+    "environment": {
+      "environment_score": 41.72,
+      "air_quality_score": 28.03,
+      "noise_score": 74.05,
+      "green_score": 15.93
+    }
+  },
+  {
+    "zip_code": "10017",
+    "environment": {
+      "environment_score": 43.79,
+      "air_quality_score": 28.03,
+      "noise_score": 83.38,
+      "green_score": 9.95
+    }
+  },
+  {
+    "zip_code": "10018",
+    "environment": {
+      "environment_score": 44.71,
+      "air_quality_score": 28.03,
+      "noise_score": 90.67,
+      "green_score": 1.8
+    }
+  },
+  {
+    "zip_code": "10019",
+    "environment": {
+      "environment_score": 36.12,
+      "air_quality_score": 28.03,
+      "noise_score": 60.24,
+      "green_score": 12.1
+    }
+  },
+  {
+    "zip_code": "10020",
+    "environment": {
+      "environment_score": 47.57,
+      "air_quality_score": 28.03,
+      "noise_score": 99.77,
+      "green_score": 0.19
+    }
+  },
+  {
+    "zip_code": "10021",
+    "environment": {
+      "environment_score": 48.49,
+      "air_quality_score": 28.03,
+      "noise_score": 90.94,
+      "green_score": 20.26
+    }
+  },
+  {
+    "zip_code": "10022",
+    "environment": {
+      "environment_score": 45.78,
+      "air_quality_score": 28.03,
+      "noise_score": 83.85,
+      "green_score": 19.12
+    }
+  },
+  {
+    "zip_code": "10023",
+    "environment": {
+      "environment_score": 44.46,
+      "air_quality_score": 28.03,
+      "noise_score": 80.84,
+      "green_score": 17.75
+    }
+  },
+  {
+    "zip_code": "10024",
+    "environment": {
+      "environment_score": 46.17,
+      "air_quality_score": 28.03,
+      "noise_score": 83.28,
+      "green_score": 22.02
+    }
+  },
+  {
+    "zip_code": "10025",
+    "environment": {
+      "environment_score": 34.74,
+      "air_quality_score": 28.03,
+      "noise_score": 47.97,
+      "green_score": 26.68
+    }
+  },
+  {
+    "zip_code": "10026",
+    "environment": {
+      "environment_score": 26.33,
+      "air_quality_score": 28.03,
+      "noise_score": 34.99,
+      "green_score": 7.36
+    }
+  },
+  {
+    "zip_code": "10027",
+    "environment": {
+      "environment_score": 25.37,
+      "air_quality_score": 28.03,
+      "noise_score": 28.64,
+      "green_score": 13.65
+    }
+  },
+  {
+    "zip_code": "10028",
+    "environment": {
+      "environment_score": 43.92,
+      "air_quality_score": 28.03,
+      "noise_score": 80.91,
+      "green_score": 14.96
+    }
+  },
+  {
+    "zip_code": "10029",
+    "environment": {
+      "environment_score": 29.25,
+      "air_quality_score": 28.03,
+      "noise_score": 42.01,
+      "green_score": 9.66
+    }
+  },
+  {
+    "zip_code": "10030",
+    "environment": {
+      "environment_score": 37.7,
+      "air_quality_score": 28.03,
+      "noise_score": 66.99,
+      "green_score": 8.18
+    }
+  },
+  {
+    "zip_code": "10031",
+    "environment": {
+      "environment_score": 17.89,
+      "air_quality_score": 28.03,
+      "noise_score": 7.5,
+      "green_score": 13.24
+    }
+  },
+  {
+    "zip_code": "10032",
+    "environment": {
+      "environment_score": 21.42,
+      "air_quality_score": 28.03,
+      "noise_score": 18.87,
+      "green_score": 11.0
+    }
+  },
+  {
+    "zip_code": "10033",
+    "environment": {
+      "environment_score": 30.78,
+      "air_quality_score": 28.03,
+      "noise_score": 46.23,
+      "green_score": 9.91
+    }
+  },
+  {
+    "zip_code": "10034",
+    "environment": {
+      "environment_score": 14.28,
+      "air_quality_score": 28.03,
+      "noise_score": 0.08,
+      "green_score": 8.21
+    }
+  },
+  {
+    "zip_code": "10035",
+    "environment": {
+      "environment_score": 38.36,
+      "air_quality_score": 28.03,
+      "noise_score": 68.5,
+      "green_score": 8.84
+    }
+  },
+  {
+    "zip_code": "10036",
+    "environment": {
+      "environment_score": 35.2,
+      "air_quality_score": 28.03,
+      "noise_score": 60.14,
+      "green_score": 7.7
+    }
+  },
+  {
+    "zip_code": "10037",
+    "environment": {
+      "environment_score": 44.22,
+      "air_quality_score": 28.03,
+      "noise_score": 88.3,
+      "green_score": 3.52
+    }
+  },
+  {
+    "zip_code": "10038",
+    "environment": {
+      "environment_score": 45.04,
+      "air_quality_score": 28.03,
+      "noise_score": 90.97,
+      "green_score": 2.92
+    }
+  },
+  {
+    "zip_code": "10039",
+    "environment": {
+      "environment_score": 42.83,
+      "air_quality_score": 28.03,
+      "noise_score": 84.72,
+      "green_score": 2.83
+    }
+  },
+  {
+    "zip_code": "10040",
+    "environment": {
+      "environment_score": 13.68,
+      "air_quality_score": 28.03,
+      "noise_score": 0.0,
+      "green_score": 5.35
+    }
+  },
+  {
+    "zip_code": "10041",
+    "environment": {
+      "environment_score": 47.65,
+      "air_quality_score": 28.03,
+      "noise_score": 99.97,
+      "green_score": 0.23
+    }
+  },
+  {
+    "zip_code": "10044",
+    "environment": {
+      "environment_score": 47.61,
+      "air_quality_score": 28.03,
+      "noise_score": 99.7,
+      "green_score": 0.5
+    }
+  },
+  {
+    "zip_code": "10048",
+    "environment": {
+      "environment_score": 43.92,
+      "air_quality_score": 28.03,
+      "noise_score": 89.43,
+      "green_score": 0.03
+    }
+  },
+  {
+    "zip_code": "10065",
+    "environment": {
+      "environment_score": 44.47,
+      "air_quality_score": 28.03,
+      "noise_score": 82.04,
+      "green_score": 15.72
+    }
+  },
+  {
+    "zip_code": "10069",
+    "environment": {
+      "environment_score": 47.54,
+      "air_quality_score": 28.03,
+      "noise_score": 99.8,
+      "green_score": 0.0
+    }
+  },
+  {
+    "zip_code": "10075",
+    "environment": {
+      "environment_score": 46.56,
+      "air_quality_score": 28.03,
+      "noise_score": 92.61,
+      "green_score": 7.65
+    }
+  },
+  {
+    "zip_code": "10103",
+    "environment": {
+      "environment_score": 43.94,
+      "air_quality_score": 28.03,
+      "noise_score": 89.43,
+      "green_score": 0.12
+    }
+  },
+  {
+    "zip_code": "10107",
+    "environment": {
+      "environment_score": 43.91,
+      "air_quality_score": 28.03,
+      "noise_score": 89.43,
+      "green_score": 0.0
+    }
+  },
+  {
+    "zip_code": "10111",
+    "environment": {
+      "environment_score": 47.66,
+      "air_quality_score": 28.03,
+      "noise_score": 100.0,
+      "green_score": 0.21
+    }
+  },
+  {
+    "zip_code": "10112",
+    "environment": {
+      "environment_score": 47.6,
+      "air_quality_score": 28.03,
+      "noise_score": 99.93,
+      "green_score": 0.08
+    }
+  },
+  {
+    "zip_code": "10119",
+    "environment": {
+      "environment_score": 47.62,
+      "air_quality_score": 28.03,
+      "noise_score": 100.0,
+      "green_score": 0.04
+    }
+  },
+  {
+    "zip_code": "10123",
+    "environment": {
+      "environment_score": 51.66,
+      "air_quality_score": 28.03,
+      "noise_score": 100.0,
+      "green_score": 20.255000000000003
+    }
+  },
+  {
+    "zip_code": "10128",
+    "environment": {
+      "environment_score": 48.38,
+      "air_quality_score": 28.03,
+      "noise_score": 89.37,
+      "green_score": 22.45
+    }
+  },
+  {
+    "zip_code": "10129",
+    "environment": {
+      "environment_score": 43.93,
+      "air_quality_score": 28.03,
+      "noise_score": 89.43,
+      "green_score": 0.09
+    }
+  },
+  {
+    "zip_code": "10153",
+    "environment": {
+      "environment_score": 47.61,
+      "air_quality_score": 28.03,
+      "noise_score": 100.0,
+      "green_score": 0.0
+    }
+  },
+  {
+    "zip_code": "10162",
+    "environment": {
+      "environment_score": 47.43,
+      "air_quality_score": 28.03,
+      "noise_score": 99.4,
+      "green_score": 0.14
+    }
+  },
+  {
+    "zip_code": "10280",
+    "environment": {
+      "environment_score": 47.02,
+      "air_quality_score": 28.03,
+      "noise_score": 98.26,
+      "green_score": 0.08
+    }
+  },
+  {
+    "zip_code": "10281",
+    "environment": {
+      "environment_score": 51.38,
+      "air_quality_score": 28.03,
+      "noise_score": 99.2,
+      "green_score": 20.255000000000003
+    }
+  },
+  {
+    "zip_code": "10282",
+    "environment": {
+      "environment_score": 51.59,
+      "air_quality_score": 28.03,
+      "noise_score": 99.8,
+      "green_score": 20.255000000000003
+    }
+  },
+  {
+    "zip_code": "10301",
+    "environment": {
+      "environment_score": 85.19,
+      "air_quality_score": 100.0,
+      "noise_score": 92.38,
+      "green_score": 39.3
+    }
+  },
+  {
+    "zip_code": "10302",
+    "environment": {
+      "environment_score": 80.91,
+      "air_quality_score": 100.0,
+      "noise_score": 95.65,
+      "green_score": 12.15
+    }
+  },
+  {
+    "zip_code": "10303",
+    "environment": {
+      "environment_score": 81.5,
+      "air_quality_score": 100.0,
+      "noise_score": 96.89,
+      "green_score": 12.96
+    }
+  },
+  {
+    "zip_code": "10304",
+    "environment": {
+      "environment_score": 82.78,
+      "air_quality_score": 100.0,
+      "noise_score": 89.43,
+      "green_score": 32.4
+    }
+  },
+  {
+    "zip_code": "10305",
+    "environment": {
+      "environment_score": 86.99,
+      "air_quality_score": 100.0,
+      "noise_score": 95.45,
+      "green_score": 42.93
+    }
+  },
+  {
+    "zip_code": "10306",
+    "environment": {
+      "environment_score": 97.94,
+      "air_quality_score": 100.0,
+      "noise_score": 96.32,
+      "green_score": 96.13
+    }
+  },
+  {
+    "zip_code": "10307",
+    "environment": {
+      "environment_score": 85.47,
+      "air_quality_score": 100.0,
+      "noise_score": 95.35,
+      "green_score": 35.49
+    }
+  },
+  {
+    "zip_code": "10308",
+    "environment": {
+      "environment_score": 87.1,
+      "air_quality_score": 100.0,
+      "noise_score": 93.78,
+      "green_score": 46.37
+    }
+  },
+  {
+    "zip_code": "10309",
+    "environment": {
+      "environment_score": 94.05,
+      "air_quality_score": 100.0,
+      "noise_score": 97.16,
+      "green_score": 75.22
+    }
+  },
+  {
+    "zip_code": "10310",
+    "environment": {
+      "environment_score": 81.53,
+      "air_quality_score": 100.0,
+      "noise_score": 90.94,
+      "green_score": 23.49
+    }
+  },
+  {
+    "zip_code": "10312",
+    "environment": {
+      "environment_score": 99.06,
+      "air_quality_score": 100.0,
+      "noise_score": 97.32,
+      "green_score": 100.0
+    }
+  },
+  {
+    "zip_code": "10314",
+    "environment": {
+      "environment_score": 98.23,
+      "air_quality_score": 100.0,
+      "noise_score": 94.95,
+      "green_score": 100.0
+    }
+  },
+  {
+    "zip_code": "10451",
+    "environment": {
+      "environment_score": 28.1,
+      "air_quality_score": 0.0,
+      "noise_score": 76.16,
+      "green_score": 7.24
+    }
+  },
+  {
+    "zip_code": "10452",
+    "environment": {
+      "environment_score": 21.86,
+      "air_quality_score": 0.0,
+      "noise_score": 57.1,
+      "green_score": 9.39
+    }
+  },
+  {
+    "zip_code": "10453",
+    "environment": {
+      "environment_score": 25.94,
+      "air_quality_score": 0.0,
+      "noise_score": 67.56,
+      "green_score": 11.48
+    }
+  },
+  {
+    "zip_code": "10454",
+    "environment": {
+      "environment_score": 32.3,
+      "air_quality_score": 0.0,
+      "noise_score": 89.83,
+      "green_score": 4.28
+    }
+  },
+  {
+    "zip_code": "10455",
+    "environment": {
+      "environment_score": 30.24,
+      "air_quality_score": 0.0,
+      "noise_score": 84.05,
+      "green_score": 4.09
+    }
+  },
+  {
+    "zip_code": "10456",
+    "environment": {
+      "environment_score": 22.39,
+      "air_quality_score": 0.0,
+      "noise_score": 58.03,
+      "green_score": 10.4
+    }
+  },
+  {
+    "zip_code": "10457",
+    "environment": {
+      "environment_score": 19.4,
+      "air_quality_score": 0.0,
+      "noise_score": 49.1,
+      "green_score": 11.09
+    }
+  },
+  {
+    "zip_code": "10458",
+    "environment": {
+      "environment_score": 27.65,
+      "air_quality_score": 0.0,
+      "noise_score": 70.77,
+      "green_score": 14.41
+    }
+  },
+  {
+    "zip_code": "10459",
+    "environment": {
+      "environment_score": 29.81,
+      "air_quality_score": 0.0,
+      "noise_score": 81.27,
+      "green_score": 6.82
+    }
+  },
+  {
+    "zip_code": "10460",
+    "environment": {
+      "environment_score": 29.41,
+      "air_quality_score": 0.0,
+      "noise_score": 77.96,
+      "green_score": 10.6
+    }
+  },
+  {
+    "zip_code": "10461",
+    "environment": {
+      "environment_score": 38.01,
+      "air_quality_score": 0.0,
+      "noise_score": 88.26,
+      "green_score": 35.61
+    }
+  },
+  {
+    "zip_code": "10462",
+    "environment": {
+      "environment_score": 33.75,
+      "air_quality_score": 0.0,
+      "noise_score": 85.09,
+      "green_score": 19.83
+    }
+  },
+  {
+    "zip_code": "10463",
+    "environment": {
+      "environment_score": 32.51,
+      "air_quality_score": 0.0,
+      "noise_score": 79.67,
+      "green_score": 23.15
+    }
+  },
+  {
+    "zip_code": "10464",
+    "environment": {
+      "environment_score": 34.95,
+      "air_quality_score": 0.0,
+      "noise_score": 95.49,
+      "green_score": 7.65
+    }
+  },
+  {
+    "zip_code": "10465",
+    "environment": {
+      "environment_score": 38.76,
+      "air_quality_score": 0.0,
+      "noise_score": 92.11,
+      "green_score": 32.62
+    }
+  },
+  {
+    "zip_code": "10466",
+    "environment": {
+      "environment_score": 38.52,
+      "air_quality_score": 0.0,
+      "noise_score": 89.8,
+      "green_score": 35.44
+    }
+  },
+  {
+    "zip_code": "10467",
+    "environment": {
+      "environment_score": 27.8,
+      "air_quality_score": 0.0,
+      "noise_score": 68.23,
+      "green_score": 19.62
+    }
+  },
+  {
+    "zip_code": "10468",
+    "environment": {
+      "environment_score": 26.25,
+      "air_quality_score": 0.0,
+      "noise_score": 64.72,
+      "green_score": 17.99
+    }
+  },
+  {
+    "zip_code": "10469",
+    "environment": {
+      "environment_score": 41.04,
+      "air_quality_score": 0.0,
+      "noise_score": 87.26,
+      "green_score": 52.48
+    }
+  },
+  {
+    "zip_code": "10470",
+    "environment": {
+      "environment_score": 36.6,
+      "air_quality_score": 0.0,
+      "noise_score": 96.99,
+      "green_score": 13.27
+    }
+  },
+  {
+    "zip_code": "10471",
+    "environment": {
+      "environment_score": 38.34,
+      "air_quality_score": 0.0,
+      "noise_score": 96.15,
+      "green_score": 23.45
+    }
+  },
+  {
+    "zip_code": "10472",
+    "environment": {
+      "environment_score": 20.54,
+      "air_quality_score": 0.0,
+      "noise_score": 46.56,
+      "green_score": 21.24
+    }
+  },
+  {
+    "zip_code": "10473",
+    "environment": {
+      "environment_score": 35.02,
+      "air_quality_score": 0.0,
+      "noise_score": 89.3,
+      "green_score": 18.85
+    }
+  },
+  {
+    "zip_code": "10474",
+    "environment": {
+      "environment_score": 34.19,
+      "air_quality_score": 0.0,
+      "noise_score": 96.62,
+      "green_score": 1.86
+    }
+  },
+  {
+    "zip_code": "10475",
+    "environment": {
+      "environment_score": 36.39,
+      "air_quality_score": 0.0,
+      "noise_score": 98.8,
+      "green_score": 9.03
+    }
+  },
+  {
+    "zip_code": "11001",
+    "environment": {
+      "environment_score": 76.76,
+      "air_quality_score": 87.07,
+      "noise_score": 99.77,
+      "green_score": 13.31
+    }
+  },
+  {
+    "zip_code": "11004",
+    "environment": {
+      "environment_score": 80.06,
+      "air_quality_score": 87.07,
+      "noise_score": 95.85,
+      "green_score": 36.67
+    }
+  },
+  {
+    "zip_code": "11040",
+    "environment": {
+      "environment_score": 75.56,
+      "air_quality_score": 87.07,
+      "noise_score": 99.97,
+      "green_score": 6.95
+    }
+  },
+  {
+    "zip_code": "11101",
+    "environment": {
+      "environment_score": 71.9,
+      "air_quality_score": 87.07,
+      "noise_score": 83.01,
+      "green_score": 18.3
+    }
+  },
+  {
+    "zip_code": "11102",
+    "environment": {
+      "environment_score": 72.15,
+      "air_quality_score": 87.07,
+      "noise_score": 86.46,
+      "green_score": 13.54
+    }
+  },
+  {
+    "zip_code": "11103",
+    "environment": {
+      "environment_score": 65.75,
+      "air_quality_score": 87.07,
+      "noise_score": 68.1,
+      "green_score": 13.66
+    }
+  },
+  {
+    "zip_code": "11104",
+    "environment": {
+      "environment_score": 73.85,
+      "air_quality_score": 87.07,
+      "noise_score": 90.37,
+      "green_score": 15.18
+    }
+  },
+  {
+    "zip_code": "11105",
+    "environment": {
+      "environment_score": 75.36,
+      "air_quality_score": 87.07,
+      "noise_score": 86.39,
+      "green_score": 29.73
+    }
+  },
+  {
+    "zip_code": "11106",
+    "environment": {
+      "environment_score": 71.67,
+      "air_quality_score": 87.07,
+      "noise_score": 80.97,
+      "green_score": 20.73
+    }
+  },
+  {
+    "zip_code": "11109",
+    "environment": {
+      "environment_score": 77.67,
+      "air_quality_score": 87.07,
+      "noise_score": 98.39,
+      "green_score": 20.255000000000003
+    }
+  },
+  {
+    "zip_code": "11201",
+    "environment": {
+      "environment_score": 58.01,
+      "air_quality_score": 59.11,
+      "noise_score": 73.51,
+      "green_score": 28.42
+    }
+  },
+  {
+    "zip_code": "11203",
+    "environment": {
+      "environment_score": 63.13,
+      "air_quality_score": 59.11,
+      "noise_score": 82.48,
+      "green_score": 38.29
+    }
+  },
+  {
+    "zip_code": "11204",
+    "environment": {
+      "environment_score": 66.11,
+      "air_quality_score": 59.11,
+      "noise_score": 93.58,
+      "green_score": 33.78
+    }
+  },
+  {
+    "zip_code": "11205",
+    "environment": {
+      "environment_score": 55.43,
+      "air_quality_score": 59.11,
+      "noise_score": 73.18,
+      "green_score": 16.09
+    }
+  },
+  {
+    "zip_code": "11206",
+    "environment": {
+      "environment_score": 38.31,
+      "air_quality_score": 59.11,
+      "noise_score": 28.67,
+      "green_score": 8.39
+    }
+  },
+  {
+    "zip_code": "11207",
+    "environment": {
+      "environment_score": 59.38,
+      "air_quality_score": 59.11,
+      "noise_score": 72.91,
+      "green_score": 36.29
+    }
+  },
+  {
+    "zip_code": "11208",
+    "environment": {
+      "environment_score": 57.04,
+      "air_quality_score": 59.11,
+      "noise_score": 72.38,
+      "green_score": 25.53
+    }
+  },
+  {
+    "zip_code": "11209",
+    "environment": {
+      "environment_score": 64.97,
+      "air_quality_score": 59.11,
+      "noise_score": 82.21,
+      "green_score": 47.98
+    }
+  },
+  {
+    "zip_code": "11210",
+    "environment": {
+      "environment_score": 66.69,
+      "air_quality_score": 59.11,
+      "noise_score": 91.41,
+      "green_score": 40.48
+    }
+  },
+  {
+    "zip_code": "11211",
+    "environment": {
+      "environment_score": 30.39,
+      "air_quality_score": 59.11,
+      "noise_score": 0.0,
+      "green_score": 18.96
+    }
+  },
+  {
+    "zip_code": "11212",
+    "environment": {
+      "environment_score": 63.09,
+      "air_quality_score": 59.11,
+      "noise_score": 87.59,
+      "green_score": 29.19
+    }
+  },
+  {
+    "zip_code": "11213",
+    "environment": {
+      "environment_score": 55.02,
+      "air_quality_score": 59.11,
+      "noise_score": 69.37,
+      "green_score": 20.7
+    }
+  },
+  {
+    "zip_code": "11214",
+    "environment": {
+      "environment_score": 64.49,
+      "air_quality_score": 59.11,
+      "noise_score": 91.34,
+      "green_score": 29.62
+    }
+  },
+  {
+    "zip_code": "11215",
+    "environment": {
+      "environment_score": 60.28,
+      "air_quality_score": 59.11,
+      "noise_score": 73.25,
+      "green_score": 40.24
+    }
+  },
+  {
+    "zip_code": "11216",
+    "environment": {
+      "environment_score": 43.96,
+      "air_quality_score": 59.11,
+      "noise_score": 37.47,
+      "green_score": 21.23
+    }
+  },
+  {
+    "zip_code": "11217",
+    "environment": {
+      "environment_score": 50.81,
+      "air_quality_score": 59.11,
+      "noise_score": 55.32,
+      "green_score": 24.23
+    }
+  },
+  {
+    "zip_code": "11218",
+    "environment": {
+      "environment_score": 61.53,
+      "air_quality_score": 59.11,
+      "noise_score": 82.28,
+      "green_score": 30.65
+    }
+  },
+  {
+    "zip_code": "11219",
+    "environment": {
+      "environment_score": 65.16,
+      "air_quality_score": 59.11,
+      "noise_score": 91.34,
+      "green_score": 32.96
+    }
+  },
+  {
+    "zip_code": "11220",
+    "environment": {
+      "environment_score": 53.21,
+      "air_quality_score": 59.11,
+      "noise_score": 60.57,
+      "green_score": 27.05
+    }
+  },
+  {
+    "zip_code": "11221",
+    "environment": {
+      "environment_score": 47.53,
+      "air_quality_score": 59.11,
+      "noise_score": 47.26,
+      "green_score": 21.97
+    }
+  },
+  {
+    "zip_code": "11222",
+    "environment": {
+      "environment_score": 55.13,
+      "air_quality_score": 59.11,
+      "noise_score": 74.58,
+      "green_score": 12.14
+    }
+  },
+  {
+    "zip_code": "11223",
+    "environment": {
+      "environment_score": 64.51,
+      "air_quality_score": 59.11,
+      "noise_score": 89.33,
+      "green_score": 33.24
+    }
+  },
+  {
+    "zip_code": "11224",
+    "environment": {
+      "environment_score": 60.43,
+      "air_quality_score": 59.11,
+      "noise_score": 92.81,
+      "green_score": 6.72
+    }
+  },
+  {
+    "zip_code": "11225",
+    "environment": {
+      "environment_score": 48.33,
+      "air_quality_score": 59.11,
+      "noise_score": 52.85,
+      "green_score": 16.16
+    }
+  },
+  {
+    "zip_code": "11226",
+    "environment": {
+      "environment_score": 49.23,
+      "air_quality_score": 59.11,
+      "noise_score": 43.52,
+      "green_score": 36.97
+    }
+  },
+  {
+    "zip_code": "11228",
+    "environment": {
+      "environment_score": 66.45,
+      "air_quality_score": 59.11,
+      "noise_score": 96.72,
+      "green_score": 29.97
+    }
+  },
+  {
+    "zip_code": "11229",
+    "environment": {
+      "environment_score": 67.82,
+      "air_quality_score": 59.11,
+      "noise_score": 89.43,
+      "green_score": 49.62
+    }
+  },
+  {
+    "zip_code": "11230",
+    "environment": {
+      "environment_score": 68.5,
+      "air_quality_score": 59.11,
+      "noise_score": 85.29,
+      "green_score": 60.24
+    }
+  },
+  {
+    "zip_code": "11231",
+    "environment": {
+      "environment_score": 61.52,
+      "air_quality_score": 59.11,
+      "noise_score": 88.53,
+      "green_score": 19.7
+    }
+  },
+  {
+    "zip_code": "11232",
+    "environment": {
+      "environment_score": 55.98,
+      "air_quality_score": 59.11,
+      "noise_score": 81.71,
+      "green_score": 3.92
+    }
+  },
+  {
+    "zip_code": "11233",
+    "environment": {
+      "environment_score": 56.73,
+      "air_quality_score": 59.11,
+      "noise_score": 74.52,
+      "green_score": 20.25
+    }
+  },
+  {
+    "zip_code": "11234",
+    "environment": {
+      "environment_score": 72.32,
+      "air_quality_score": 59.11,
+      "noise_score": 84.08,
+      "green_score": 81.46
+    }
+  },
+  {
+    "zip_code": "11235",
+    "environment": {
+      "environment_score": 66.67,
+      "air_quality_score": 59.11,
+      "noise_score": 86.56,
+      "green_score": 48.88
+    }
+  },
+  {
+    "zip_code": "11236",
+    "environment": {
+      "environment_score": 69.71,
+      "air_quality_score": 59.11,
+      "noise_score": 88.53,
+      "green_score": 60.65
+    }
+  },
+  {
+    "zip_code": "11237",
+    "environment": {
+      "environment_score": 45.44,
+      "air_quality_score": 59.11,
+      "noise_score": 49.67,
+      "green_score": 7.3
+    }
+  },
+  {
+    "zip_code": "11238",
+    "environment": {
+      "environment_score": 37.21,
+      "air_quality_score": 59.11,
+      "noise_score": 19.01,
+      "green_score": 19.8
+    }
+  },
+  {
+    "zip_code": "11239",
+    "environment": {
+      "environment_score": 61.59,
+      "air_quality_score": 59.11,
+      "noise_score": 99.77,
+      "green_score": 0.34
+    }
+  },
+  {
+    "zip_code": "11242",
+    "environment": {
+      "environment_score": 65.65,
+      "air_quality_score": 59.11,
+      "noise_score": 100.0,
+      "green_score": 20.255000000000003
+    }
+  },
+  {
+    "zip_code": "11249",
+    "environment": {
+      "environment_score": 53.26,
+      "air_quality_score": 59.11,
+      "noise_score": 72.21,
+      "green_score": 6.93
+    }
+  },
+  {
+    "zip_code": "11354",
+    "environment": {
+      "environment_score": 80.9,
+      "air_quality_score": 87.07,
+      "noise_score": 94.85,
+      "green_score": 42.58
+    }
+  },
+  {
+    "zip_code": "11355",
+    "environment": {
+      "environment_score": 81.41,
+      "air_quality_score": 87.07,
+      "noise_score": 94.92,
+      "green_score": 45.04
+    }
+  },
+  {
+    "zip_code": "11356",
+    "environment": {
+      "environment_score": 75.75,
+      "air_quality_score": 87.07,
+      "noise_score": 93.31,
+      "green_score": 19.55
+    }
+  },
+  {
+    "zip_code": "11357",
+    "environment": {
+      "environment_score": 88.88,
+      "air_quality_score": 87.07,
+      "noise_score": 97.26,
+      "green_score": 78.28
+    }
+  },
+  {
+    "zip_code": "11358",
+    "environment": {
+      "environment_score": 85.02,
+      "air_quality_score": 87.07,
+      "noise_score": 94.82,
+      "green_score": 63.26
+    }
+  },
+  {
+    "zip_code": "11360",
+    "environment": {
+      "environment_score": 78.31,
+      "air_quality_score": 87.07,
+      "noise_score": 99.5,
+      "green_score": 21.51
+    }
+  },
+  {
+    "zip_code": "11361",
+    "environment": {
+      "environment_score": 81.77,
+      "air_quality_score": 87.07,
+      "noise_score": 97.99,
+      "green_score": 41.47
+    }
+  },
+  {
+    "zip_code": "11362",
+    "environment": {
+      "environment_score": 79.3,
+      "air_quality_score": 87.07,
+      "noise_score": 97.59,
+      "green_score": 29.79
+    }
+  },
+  {
+    "zip_code": "11363",
+    "environment": {
+      "environment_score": 76.5,
+      "air_quality_score": 87.07,
+      "noise_score": 99.43,
+      "green_score": 12.57
+    }
+  },
+  {
+    "zip_code": "11364",
+    "environment": {
+      "environment_score": 85.34,
+      "air_quality_score": 87.07,
+      "noise_score": 98.76,
+      "green_score": 57.94
+    }
+  },
+  {
+    "zip_code": "11365",
+    "environment": {
+      "environment_score": 86.22,
+      "air_quality_score": 87.07,
+      "noise_score": 98.13,
+      "green_score": 63.47
+    }
+  },
+  {
+    "zip_code": "11366",
+    "environment": {
+      "environment_score": 78.81,
+      "air_quality_score": 87.07,
+      "noise_score": 96.86,
+      "green_score": 28.66
+    }
+  },
+  {
+    "zip_code": "11367",
+    "environment": {
+      "environment_score": 80.51,
+      "air_quality_score": 87.07,
+      "noise_score": 95.75,
+      "green_score": 39.1
+    }
+  },
+  {
+    "zip_code": "11368",
+    "environment": {
+      "environment_score": 72.02,
+      "air_quality_score": 87.07,
+      "noise_score": 79.53,
+      "green_score": 25.02
+    }
+  },
+  {
+    "zip_code": "11369",
+    "environment": {
+      "environment_score": 77.84,
+      "air_quality_score": 87.07,
+      "noise_score": 94.38,
+      "green_score": 28.14
+    }
+  },
+  {
+    "zip_code": "11370",
+    "environment": {
+      "environment_score": 79.1,
+      "air_quality_score": 87.07,
+      "noise_score": 98.13,
+      "green_score": 27.87
+    }
+  },
+  {
+    "zip_code": "11372",
+    "environment": {
+      "environment_score": 72.23,
+      "air_quality_score": 87.07,
+      "noise_score": 75.02,
+      "green_score": 33.98
+    }
+  },
+  {
+    "zip_code": "11373",
+    "environment": {
+      "environment_score": 77.85,
+      "air_quality_score": 87.07,
+      "noise_score": 86.96,
+      "green_score": 41.18
+    }
+  },
+  {
+    "zip_code": "11374",
+    "environment": {
+      "environment_score": 76.43,
+      "air_quality_score": 87.07,
+      "noise_score": 93.28,
+      "green_score": 23.02
+    }
+  },
+  {
+    "zip_code": "11375",
+    "environment": {
+      "environment_score": 82.91,
+      "air_quality_score": 87.07,
+      "noise_score": 89.53,
+      "green_score": 61.97
+    }
+  },
+  {
+    "zip_code": "11377",
+    "environment": {
+      "environment_score": 75.08,
+      "air_quality_score": 87.07,
+      "noise_score": 79.57,
+      "green_score": 40.25
+    }
+  },
+  {
+    "zip_code": "11378",
+    "environment": {
+      "environment_score": 80.0,
+      "air_quality_score": 87.07,
+      "noise_score": 93.41,
+      "green_score": 40.62
+    }
+  },
+  {
+    "zip_code": "11379",
+    "environment": {
+      "environment_score": 81.78,
+      "air_quality_score": 87.07,
+      "noise_score": 96.92,
+      "green_score": 43.37
+    }
+  },
+  {
+    "zip_code": "11385",
+    "environment": {
+      "environment_score": 79.69,
+      "air_quality_score": 87.07,
+      "noise_score": 63.88,
+      "green_score": 90.74
+    }
+  },
+  {
+    "zip_code": "11411",
+    "environment": {
+      "environment_score": 79.48,
+      "air_quality_score": 87.07,
+      "noise_score": 96.15,
+      "green_score": 33.23
+    }
+  },
+  {
+    "zip_code": "11412",
+    "environment": {
+      "environment_score": 81.98,
+      "air_quality_score": 87.07,
+      "noise_score": 94.98,
+      "green_score": 47.79
+    }
+  },
+  {
+    "zip_code": "11413",
+    "environment": {
+      "environment_score": 85.34,
+      "air_quality_score": 87.07,
+      "noise_score": 96.09,
+      "green_score": 62.64
+    }
+  },
+  {
+    "zip_code": "11414",
+    "environment": {
+      "environment_score": 78.68,
+      "air_quality_score": 87.07,
+      "noise_score": 90.44,
+      "green_score": 39.21
+    }
+  },
+  {
+    "zip_code": "11415",
+    "environment": {
+      "environment_score": 75.73,
+      "air_quality_score": 87.07,
+      "noise_score": 93.58,
+      "green_score": 18.98
+    }
+  },
+  {
+    "zip_code": "11416",
+    "environment": {
+      "environment_score": 76.47,
+      "air_quality_score": 87.07,
+      "noise_score": 94.11,
+      "green_score": 21.75
+    }
+  },
+  {
+    "zip_code": "11417",
+    "environment": {
+      "environment_score": 79.34,
+      "air_quality_score": 87.07,
+      "noise_score": 94.45,
+      "green_score": 35.48
+    }
+  },
+  {
+    "zip_code": "11418",
+    "environment": {
+      "environment_score": 77.9,
+      "air_quality_score": 87.07,
+      "noise_score": 87.63,
+      "green_score": 40.23
+    }
+  },
+  {
+    "zip_code": "11419",
+    "environment": {
+      "environment_score": 77.02,
+      "air_quality_score": 87.07,
+      "noise_score": 87.49,
+      "green_score": 36.11
+    }
+  },
+  {
+    "zip_code": "11420",
+    "environment": {
+      "environment_score": 82.22,
+      "air_quality_score": 87.07,
+      "noise_score": 91.1,
+      "green_score": 55.79
+    }
+  },
+  {
+    "zip_code": "11421",
+    "environment": {
+      "environment_score": 77.43,
+      "air_quality_score": 87.07,
+      "noise_score": 88.63,
+      "green_score": 36.13
+    }
+  },
+  {
+    "zip_code": "11422",
+    "environment": {
+      "environment_score": 83.48,
+      "air_quality_score": 87.07,
+      "noise_score": 95.18,
+      "green_score": 54.95
+    }
+  },
+  {
+    "zip_code": "11423",
+    "environment": {
+      "environment_score": 76.44,
+      "air_quality_score": 87.07,
+      "noise_score": 89.43,
+      "green_score": 29.81
+    }
+  },
+  {
+    "zip_code": "11426",
+    "environment": {
+      "environment_score": 81.84,
+      "air_quality_score": 87.07,
+      "noise_score": 97.96,
+      "green_score": 41.84
+    }
+  },
+  {
+    "zip_code": "11427",
+    "environment": {
+      "environment_score": 80.23,
+      "air_quality_score": 87.07,
+      "noise_score": 98.6,
+      "green_score": 32.67
+    }
+  },
+  {
+    "zip_code": "11428",
+    "environment": {
+      "environment_score": 78.94,
+      "air_quality_score": 87.07,
+      "noise_score": 97.96,
+      "green_score": 27.37
+    }
+  },
+  {
+    "zip_code": "11429",
+    "environment": {
+      "environment_score": 79.45,
+      "air_quality_score": 87.07,
+      "noise_score": 98.39,
+      "green_score": 29.14
+    }
+  },
+  {
+    "zip_code": "11430",
+    "environment": {
+      "environment_score": 74.19,
+      "air_quality_score": 87.07,
+      "noise_score": 99.93,
+      "green_score": 0.15
+    }
+  },
+  {
+    "zip_code": "11432",
+    "environment": {
+      "environment_score": 78.12,
+      "air_quality_score": 87.07,
+      "noise_score": 88.9,
+      "green_score": 39.11
+    }
+  },
+  {
+    "zip_code": "11433",
+    "environment": {
+      "environment_score": 76.36,
+      "air_quality_score": 87.07,
+      "noise_score": 92.48,
+      "green_score": 24.05
+    }
+  },
+  {
+    "zip_code": "11434",
+    "environment": {
+      "environment_score": 82.6,
+      "air_quality_score": 87.07,
+      "noise_score": 92.48,
+      "green_score": 55.26
+    }
+  },
+  {
+    "zip_code": "11435",
+    "environment": {
+      "environment_score": 79.4,
+      "air_quality_score": 87.07,
+      "noise_score": 91.74,
+      "green_score": 40.54
+    }
+  },
+  {
+    "zip_code": "11436",
+    "environment": {
+      "environment_score": 77.92,
+      "air_quality_score": 87.07,
+      "noise_score": 97.19,
+      "green_score": 23.63
+    }
+  },
+  {
+    "zip_code": "11691",
+    "environment": {
+      "environment_score": 76.17,
+      "air_quality_score": 87.07,
+      "noise_score": 93.65,
+      "green_score": 21.03
+    }
+  },
+  {
+    "zip_code": "11692",
+    "environment": {
+      "environment_score": 74.48,
+      "air_quality_score": 87.07,
+      "noise_score": 98.33,
+      "green_score": 4.44
+    }
+  },
+  {
+    "zip_code": "11693",
+    "environment": {
+      "environment_score": 74.08,
+      "air_quality_score": 87.07,
+      "noise_score": 96.89,
+      "green_score": 4.95
+    }
+  },
+  {
+    "zip_code": "11694",
+    "environment": {
+      "environment_score": 76.55,
+      "air_quality_score": 87.07,
+      "noise_score": 90.64,
+      "green_score": 28.22
+    }
+  },
+  {
+    "zip_code": "11697",
+    "environment": {
+      "environment_score": 74.13,
+      "air_quality_score": 87.07,
+      "noise_score": 99.83,
+      "green_score": 0.03
+    }
+  }
+]

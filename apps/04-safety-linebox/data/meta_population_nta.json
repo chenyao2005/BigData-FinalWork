@@ -1,0 +1,34 @@
+{
+  "population_metrics": [
+    {
+      "id": "total_pop",
+      "label": "总人口（人）",
+      "unit": "人"
+    },
+    {
+      "id": "pct_white",
+      "label": "白人占比（%）",
+      "unit": "%"
+    },
+    {
+      "id": "pct_black",
+      "label": "黑人占比（%）",
+      "unit": "%"
+    },
+    {
+      "id": "pct_asian",
+      "label": "亚裔占比（%）",
+      "unit": "%"
+    },
+    {
+      "id": "pct_hispanic",
+      "label": "西语裔占比（%）",
+      "unit": "%"
+    },
+    {
+      "id": "school_distribution",
+      "label": "学校分布（2020）",
+      "unit": ""
+    }
+  ]
+}

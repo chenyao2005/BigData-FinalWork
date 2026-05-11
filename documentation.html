@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小组说明文档 · 纽约宜居方程：数据驱动的街区选址引擎</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-page: #f4f1eb;
+        --bg-card: #faf8f4;
+        --bg-hero: #141c26;
+        --text: #1c2430;
+        --text-muted: #5c6570;
+        --accent: #c4874a;
+        --accent-soft: rgba(196, 135, 74, 0.18);
+        --rule: rgba(28, 36, 48, 0.12);
+        --link: #2d6a8f;
+        --maxw: 42rem;
+        --maxw-wide: 52rem;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "DM Sans", "Noto Serif SC", system-ui, sans-serif;
+        font-size: 1.05rem;
+        line-height: 1.82;
+        color: var(--text);
+        background: var(--bg-page);
+        letter-spacing: 0.01em;
+      }
+
+      .hero {
+        background: linear-gradient(165deg, #121820 0%, #1a2838 42%, #243447 100%);
+        color: #f0ebe3;
+        padding: clamp(3rem, 8vw, 5rem) 1.5rem 4rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+            ellipse 80% 50% at 50% -20%,
+            rgba(196, 135, 74, 0.35),
+            transparent 55%
+          ),
+          radial-gradient(circle at 90% 80%, rgba(45, 106, 143, 0.2), transparent 40%);
+        pointer-events: none;
+      }
+
+      .hero-inner {
+        position: relative;
+        max-width: var(--maxw-wide);
+        margin: 0 auto;
+      }
+
+      .hero-eyebrow {
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(240, 235, 227, 0.55);
+        margin: 0 0 1rem;
+      }
+
+      .hero h1 {
+        font-family: "Noto Serif SC", serif;
+        font-weight: 700;
+        font-size: clamp(1.65rem, 4vw, 2.35rem);
+        line-height: 1.28;
+        margin: 0 0 0.75rem;
+        color: #faf6ef;
+      }
+
+      .hero-lead {
+        font-family: "Noto Serif SC", serif;
+        font-size: 1.05rem;
+        font-weight: 400;
+        color: rgba(240, 235, 227, 0.82);
+        max-width: 36rem;
+        margin: 0 auto 1.25rem;
+        line-height: 1.75;
+      }
+
+      .hero-meta {
+        font-size: 0.88rem;
+        color: rgba(240, 235, 227, 0.55);
+        margin: 0;
+      }
+
+      .hero-meta a {
+        color: #e8c49a;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(232, 196, 154, 0.35);
+      }
+
+      .hero-meta a:hover {
+        border-bottom-color: #e8c49a;
+      }
+
+      .shell {
+        max-width: var(--maxw-wide);
+        margin: -2.5rem auto 0;
+        padding: 0 1.25rem 4rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .toc-card {
+        background: var(--bg-card);
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        padding: 1.35rem 1.5rem 1.25rem;
+        margin-bottom: 2.25rem;
+        box-shadow: 0 12px 40px rgba(20, 28, 38, 0.06);
+      }
+
+      .toc-card h2 {
+        font-family: "Noto Serif SC", serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin: 0 0 1rem;
+        color: var(--text);
+        letter-spacing: 0.06em;
+      }
+
+      .toc-grid {
+        display: grid;
+        gap: 0.35rem 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+        font-size: 0.88rem;
+        font-weight: 500;
+      }
+
+      .toc-grid a {
+        color: var(--link);
+        text-decoration: none;
+        padding: 0.2rem 0;
+      }
+
+      .toc-grid a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      article.doc {
+        background: var(--bg-card);
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        padding: clamp(1.75rem, 4vw, 2.75rem) clamp(1.25rem, 4vw, 2.5rem);
+        box-shadow: 0 8px 32px rgba(20, 28, 38, 0.05);
+      }
+
+      article.doc section {
+        margin-bottom: 2.75rem;
+      }
+
+      article.doc section:last-child {
+        margin-bottom: 0;
+      }
+
+      article.doc h2 {
+        font-family: "Noto Serif SC", serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin: 0 0 1rem;
+        padding-bottom: 0.65rem;
+        border-bottom: 2px solid var(--accent);
+        color: var(--text);
+        letter-spacing: 0.02em;
+      }
+
+      article.doc h3 {
+        font-family: "Noto Serif SC", serif;
+        font-size: 1.08rem;
+        font-weight: 700;
+        margin: 2rem 0 0.65rem;
+        color: var(--text);
+      }
+
+      article.doc h3:first-child {
+        margin-top: 0;
+      }
+
+      article.doc h4 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        margin: 1.5rem 0 0.5rem;
+      }
+
+      article.doc p {
+        margin: 0 0 1rem;
+        color: var(--text);
+      }
+
+      article.doc ul {
+        margin: 0 0 1rem;
+        padding-left: 1.35rem;
+      }
+
+      article.doc li {
+        margin-bottom: 0.35rem;
+      }
+
+      article.doc ol {
+        margin: 0 0 1rem;
+        padding-left: 1.35rem;
+      }
+
+      article.doc a {
+        color: var(--link);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(45, 106, 143, 0.25);
+      }
+
+      article.doc a:hover {
+        border-bottom-color: var(--link);
+      }
+
+      .lead {
+        font-family: "Noto Serif SC", serif;
+        font-size: 1.08rem;
+        color: var(--text-muted);
+      }
+
+      .chapter-tag {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: var(--accent);
+        margin-bottom: 0.35rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+        margin: 1rem 0 1.25rem;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--rule);
+        padding: 0.65rem 0.75rem;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--accent-soft);
+        font-weight: 600;
+        font-size: 0.82rem;
+        letter-spacing: 0.03em;
+      }
+
+      tr:nth-child(even) td {
+        background: rgba(255, 255, 255, 0.45);
+      }
+
+      .person-block {
+        margin: 1.25rem 0;
+        padding: 1.1rem 1.15rem;
+        background: rgba(255, 255, 255, 0.65);
+        border-left: 3px solid var(--accent);
+        border-radius: 0 4px 4px 0;
+      }
+
+      .person-block strong {
+        font-family: "Noto Serif SC", serif;
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 1.02rem;
+      }
+
+      .person-block p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.78;
+      }
+
+      footer.doc-foot {
+        max-width: var(--maxw-wide);
+        margin: 2rem auto 0;
+        padding: 0 1.25rem 3rem;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        text-align: center;
+      }
+
+      @media (max-width: 640px) {
+        .toc-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Documentation · Group Submission</p>
+        <h1>纽约宜居方程：数据驱动的街区选址引擎</h1>
+        <p class="hero-lead">小组说明文档：项目问题、设计方案、开发分工与数据来源索引。</p>
+      </div>
+    </header>
+
+    <div class="shell">
+      <nav class="toc-card" aria-label="文档目录">
+        <h2>导读</h2>
+        <div class="toc-grid">
+          <a href="#s1">一、项目概述</a>
+          <a href="#s2">二、可视化旨在回答什么问题</a>
+          <a href="#s3">三、设计方案</a>
+          <a href="#s4">四、开发流程与分工</a>
+          <a href="#s5">五、数据来源与引用</a>
+        </div>
+      </nav>
+
+      <article class="doc">
+        <section id="s1">
+          <span class="chapter-tag">OVERVIEW</span>
+          <h2>一、项目概述</h2>
+          <p>
+            本项目是一次纽约城市数据可视化实践。小组把叙事拆成社会人群、经济成本、自然生态与时空通勤四条线，将安全与教育、租金与经济机会、环境与公共设施、地铁与可达性串成同一条阅读路径，指向这样一个辅助性问题：在不同生活角色与偏好之下，哪些街区相对更值得作为宜居备选。
+          </p>
+        </section>
+
+        <section id="s2">
+          <span class="chapter-tag">RESEARCH QUESTIONS</span>
+          <h2>二、可视化旨在回答什么问题？</h2>
+          <h3>2.1 总问题</h3>
+          <p class="lead">
+            在纽约街区尺度上，人口与教育安全、经济压力与机会、环境质量与通勤可达性等因素如何共同塑造差异？用户能否在数据支持下结合自身偏好缩小候选范围，并找到适合自己的宜居备选？
+          </p>
+          <h3>2.2 分维度一览</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>维度</th>
+                <th>核心问题</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>社会底色</td>
+                <td>
+                  人口与族裔的时间与空间差异如何呈现？教育资源如何分布？安全水平在区际与区内是否一致？所谓核心区更安全是否经得起数据检验？
+                </td>
+              </tr>
+              <tr>
+                <td>经济账本</td>
+                <td>住房压力与行业机会、薪资如何在空间上叠合？切换行业后，高租金与高机会等典型组合如何变化？</td>
+              </tr>
+              <tr>
+                <td>微观生态</td>
+                <td>
+                  空气、安静程度与绿荫等综合表现如何？公共设施分布是否与高分区域同向？安静程度可由 311 噪音相关诉求等代理指标近似刻画。
+                </td>
+              </tr>
+              <tr>
+                <td>时空脉搏</td>
+                <td>地铁、网约车与单车所对应的真实时间边界在哪里？客流潮汐与支付方式能否反映职住分离与数字鸿沟？</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="s3">
+          <span class="chapter-tag">DESIGN</span>
+          <h2>三、设计方案</h2>
+
+          <h3>3.1 整体结构</h3>
+          <p>
+            页面采用自上而下单柱流式布局：顶部 Hero 导言后接四个篇章，每章包含引导文案、嵌入的子项目交互以及数据洞察，最后在终章完成多维综合与典型人群画像。
+          </p>
+          <ol>
+            <li><strong>社会底色</strong>：人口、教育与安全的汇总可视化。</li>
+            <li><strong>经济账本</strong>：住房压力底色、经济机会气泡与散点联动。</li>
+            <li><strong>微观生态</strong>：环境分区着色图、过滤器、雷达图与公共设施图层。</li>
+            <li><strong>时空脉搏</strong>：多模态通勤、等时圈、客流与支付方式。</li>
+            <li><strong>终章</strong>：四维堆叠与典型人群的 Top ZIP。</li>
+          </ol>
+
+          <h3>3.2 社会、教育与公共安全</h3>
+          <h4>要解答什么问题</h4>
+          <p>
+            模块围绕纽约市不同 ZIP Code 区域的人口、族裔、教育资源与公共安全之间呈现怎样的空间与时间差异这一问题展开，目标是帮助读者把握纽约在人口、教育与公共安全上的区域差别。
+          </p>
+          <p>子问题包括：</p>
+          <ul>
+            <li>人口总量与族裔比例在 2011–2024 年的时间变化，以及人口排名前 20 的 ZIP 的总人口、族裔组成及变化。</li>
+            <li>不同 ZIP 的人口规模与族裔结构的空间分布。</li>
+            <li>不同 ZIP 的教育水平与学校层级分布。</li>
+            <li>不同 Borough 公共安全水平的时间趋势、区际差异以及区内离散程度。</li>
+            <li>人口密度、族裔结构、教育资源与安全状况之间的关联规律。</li>
+          </ul>
+
+          <h4>可视化编码与交互</h4>
+          <p>
+            <strong>图表 1：viz-population-yearly-change，堆叠柱与年份×ZIP 网格。</strong>
+            结构上是上方按年份排列的堆叠柱状图，下方为年份与 ZIP Code 构成的网格。编码方面，横轴为年份；堆叠柱高度映射全市总人口，颜色区分族裔；网格列为年份、行为人口前 20 的 ZIP；网格内圆点以颜色区分族裔，以大小映射该族裔在该年该 ZIP 的人口规模；右侧条带展示该 ZIP 的历年平均族裔构成。交互上支持悬停高亮、点击固定以便上下区域对照，并用图例识别族裔。设计理由是时间轴利于看趋势，前 20 个 ZIP 若全部用折线会过于拥挤，网格加点大小能在压缩信息密度的同时保持可读性，上下联动则把全市变化与局部 ZIP 变化连在一起。
+          </p>
+          <p>
+            <strong>图表 2：viz-population-zip-rings，ZIP 地图与五区环形图。</strong>
+            ZIP 面域以颜色深浅映射总人口；五个环形图中扇区角度或面积映射 Borough 内各族裔占比。交互包括悬停 ZIP 显示 tooltip，点击地图或环形图实现高亮联动。人口的空间差异适合用地图表达，Borough 层面的族裔构成则适合用环形图表达部分与整体的关系。
+          </p>
+          <p>
+            <strong>图表 3：viz-education-level，三联尖峰或分层地图。</strong>
+            每一层底图中 ZIP 面域的颜色深浅映射该类学校数量；学校点位采用锥形符号，锥高或大小映射学校综合实力的代理指标；上层、中层与下层分别对应小学及以下、中学与大学。交互支持悬停查看学校信息、地图缩放与拖拽，三联图共用同一套底图与视觉规则。教育资源具有明确空间属性，分层展示可避免大学被庞大的 K–12 体量淹没，锥形符号有利于突出关键学校。
+          </p>
+          <p>
+            <strong>图表 4：viz-safety-borough-linebox，折线、分位带与箱线图。</strong>
+            横轴为年份，纵轴为每千人案件数；折线表示 Borough 年度平均水平；淡色带表示 Borough 内 ZIP 的 P20–P80 区间；右侧箱线图展示末年的 min、Q1、median、Q3、max。交互支持点击图例或图形高亮 Borough，悬停查看具体 ZIP 与案件率，折线与箱线图联动。安全议题既要时间趋势也要区内离散程度，折线、分位带与箱线图组合可以同时回应谁更高、是否稳定以及内部差异有多大。
+          </p>
+          <p>
+            本模块所使用的开放数据索引见第五章表格，涵盖 ACS、Borough 边界、DOE K–12、College Scorecard、NYPD 与 MODZCTA 等来源。
+          </p>
+
+          <h3>3.3 经济账本：住房压力与经济机会</h3>
+          <h4>要解答什么问题</h4>
+          <p>
+            在经济与生活成本这一子主题下，模块借助不同产业在纽约各邮编区域的就业机会、薪资水平与住房成本相关数据，以交互方式观察变量之间的空间关系并形成初步结论。
+          </p>
+          <p>
+            可视化不仅回答哪里房租高、哪里工作多，更希望回应某一类职业在纽约不同区域是否挣得到钱、是否住得起房。因此它不是单纯的地理分布示意图，而是允许用户切换行业、缩放地图、刷选局部并联动查看散点的探索工具，用来观察经济机会与生活成本之间的错位与重合。
+          </p>
+          <h4>设计决策</h4>
+          <p>
+            地图擅长表达空间分布，但不擅长精确比较变量之间的关系；散点图擅长变量关系，却缺少城市空间语境。因此将地图作为主视图、散点图作为辅助视图，通过联动把空间分布与统计关系连起来。
+          </p>
+          <p>
+            地图底色最终表达住房负担而不是租金绝对值，因为单独谈租金高低不足以说明居住难度，关键在于租金与收入之间的关系。底图颜色映射租金相对薪资所形成的负担水平，色调偏暖表示负担压力偏大，偏冷表示压力相对较小。
+          </p>
+          <p>
+            上层圆圈图层表达经济机会与财富潜力。若仅用企业数量，只能反映密度难以反映机会质量，因此引入结合企业数量与行业薪资的机会指数，使圆圈同时承载聚集程度与收入支撑能力：企业越多、薪资越高则圆圈越大。底色读住房压力，气泡读经济机会，阅读逻辑一目了然。
+          </p>
+          <p>
+            交互设计服务于卷入分析过程与可探索性：地图支持缩放与平移以便观察局部；按住 Shift 并用左键拖动可刷选局部，把框选范围同步过滤到散点图；在散点图上悬停某一数据点可反向联动地图并使对应气泡变色，维持双向联动；地图侧提供悬浮提示与跨视图高亮；另设 Current Snapshot 文本摘要，用自然语言概括当前视图，降低阅读门槛。
+          </p>
+
+          <h3>3.4 微观生态：环境与公共设施</h3>
+          <h4>要解答什么问题</h4>
+          <p>
+            模块面向希望快速了解纽约城市环境的访客，核心问题是：若从空气质量、相对安静程度与绿荫覆盖三个角度观察，纽约不同邮政编码区域的环境差异是什么。
+          </p>
+          <p>
+            同时希望帮助用户进一步回答：哪些邮编在环境综合分上更高或更弱；某一区域的短板主要来自空气、噪音还是绿化；当用户对安静或空气等不同维度有不同偏好时，筛选结果如何变化；用户能否先用地图缩小兴趣范围，再用雷达图理解该区域的环境画像。
+          </p>
+          <p>
+            因此本模块并不声称穷尽纽约全部环境问题，而是提供一个交互入口，让用户围绕自身关注点主动探索心仪的生活环境。
+          </p>
+          <h4>设计决策</h4>
+          <p>
+            叙事结构参考了
+            <a href="https://polakowo.io/gtd-analysis/project/" target="_blank" rel="noopener noreferrer">Global Terrorism Database: Interactive Analysis</a>
+            一类页面：先交代问题与数据，再给出交互入口，最后用地图与图形完成探索。
+          </p>
+          <p>
+            主视图选用地图，因为对城市环境议题而言，先看空间分布最为自然。也曾考虑以柱状图或散点图作为主视图，但城市环境主题下空间层次不可替代，故仍以地图为先。数据最终统一在 ZIP Code 尺度上对齐，因此采用分区着色地图展示综合环境分，便于识别高分区与低分区。
+          </p>
+          <p>
+            右侧配以雷达图，因为仅靠地图只能看到综合分，难以分辨空气、安静与绿荫哪一项更强或更弱。维度数为三时雷达图信息量适中，适合作为补充。
+          </p>
+          <p>
+            在地图与雷达图之外增加综合分阈值滑块与三个勾选条件，让用户先设定综合底线，再叠加个人更在意的偏好，逐步收窄范围。相较堆砌大量筛选项，这种方式条理更清晰，也更接近课程语境中的动态查询过滤。
+          </p>
+          <p>
+            技术栈采用原生 HTML、CSS 与 JavaScript，地图使用
+            <a href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">Leaflet</a>，图形与数据读取使用
+            <a href="https://d3js.org/" target="_blank" rel="noopener noreferrer">D3.js</a>。未引入 Vue 或 React，主要考虑页面结构清晰、状态规模适中，原生方案更轻量，也更适合部署在 GitHub Pages 等纯静态环境。
+          </p>
+
+          <h3>3.5 时空脉搏：多模态交通、选址推荐与城市节律</h3>
+          <h4>要解答什么问题</h4>
+          <p>
+            本可视化系统定位为多维度的城市微观数据探索平台，希望缓解传统交通数据中只见数字、不见空间的割裂感，呈现纽约在物理空间可达性与社会人口结构折叠意义上的图景。核心层面包含三组问题。
+          </p>
+          <p>
+            第一组是微观宜居与多模态交通。在复杂路网中，从给定社区出发，依靠地铁、网约车或共享单车，真实的时间成本边界在哪里？通过三种方式的效率模拟，用户能更直观地比较何种方式更快。
+          </p>
+          <p>
+            第二组是基于多目标优化的选址决策。如何把交通时间矩阵与核心商圈的地理分布耦合起来，并通过偏好权重为不同人群提供可解释的安家选址建议？用户调整权重后，系统推荐得分领先的街区，并展示附近大商圈与主要通勤路线。
+          </p>
+          <p>
+            第三组是城市节律与支付层面的数字鸿沟。纽约二十四小时地下客流如何随昼夜交替呈现潮汐？早晚高峰的极值如何在住宅区与商业区之间迁移？OMNY 与 MetroCard 等支付方式在不同行政区之间的断层意味着什么？例如清晨七至九点客流极值常出现在布鲁克林、皇后区等居住导向区域，傍晚十七至十九点高密度刷卡则向曼哈顿中下城倾斜，折射职住分离；非接触支付在白领聚集区更主流，而在下城学校与景点密集区刷卡量仍然坚挺。
+          </p>
+          <h4>可视化编码与交互设计</h4>
+          <p>
+            编码层面，等时圈把时间投射到二维平面。受单行线、河流阻隔、地铁走向与换乘惩罚等因素影响，拓扑意义上的距离往往远大于直线距离。连续热力色带中偏蓝绿表示耗时较短，偏橙红表示耗时较长，邮编多边形上色后形成可读的城市可达性等高线图。空间上映射采用 Mercator 与真实坐标；地铁站圆点面积按 scaleSqrt 比例尺映射客流量，使面积与数值一致。拥挤度用绿到红的连续色带编码，红色在暗色底上突出高峰感知。安家推荐摒弃单一悬浮图钉，改为邮编块颜色跳变，例如深红表示安家点、橘黄表示商圈，并用动态连线引导视线，使地理结构本身成为信息载体。
+          </p>
+          <p>
+            交互层面，多模态赛跑模拟让用户选定起终点后，观察地铁、网约车与骑行沿插值轨道推进，把矩阵意义上的校验过程游戏化。等时圈参数滑块覆盖约十至九十分钟通勤阈值，拖动时可达区域如水波扩散或收缩，并与左侧面板中可达区域数量等指标联动。时间漫游用统一时间滑块驱动全局，代替多块静态小 multiples。十字游标借助遮罩捕获鼠标位置，吸附到整点小时，在浮窗中输出该时刻各支付方式的人数，衔接宏观走势与微观读数。
+          </p>
+          <p>
+            替代方案方面，河流图曾用于强化潮汐感，但缺乏稳定水平基线，难以比较绝对人数，最终改用基线清晰的堆叠面积图，使 OMNY 与刷卡人数的绝对差异一目了然。地铁连线若简单按纬度串联会导致线路在地图上横穿，最终采用基于经纬度的最近邻排序并结合样条插值，按需绘制经过关注区域的 Top 5 核心路网。进出站对比曾列入计划，但受 MTA 计费数据结构限制，转而深挖 payment_method，从而凸显曼哈顿商务区与下城低收入及学生聚集区之间的技术采纳鸿沟。
+          </p>
+          <h4>数据与详述</h4>
+          <p>
+            交通子系统的完整问题陈述、设计取舍与数据列表详见
+            <a href="https://wfmitf.github.io/nyc-pulse/documentation" target="_blank" rel="noopener noreferrer">nyc-pulse documentation</a>，与本节保持一致。
+          </p>
+
+          <h3>3.6 终章：四维综合与人群画像</h3>
+          <p>
+            针对留学生、上班族、家庭或旅居人群以及退休长者等典型画像设定不同权重，用堆叠柱状图呈现社会、经济、环境与交通等维度的 Top ZIP，强调权重本身即价值观表达：不存在在所有维度同时拿满分的单一街区。
+          </p>
+        </section>
+
+        <section id="s4">
+          <span class="chapter-tag">PROCESS</span>
+          <h2>四、开发流程与分工</h2>
+
+          <h3>4.1 分工表</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>方向</th>
+                <th>职责</th>
+                <th>成员</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>主站整合</td>
+                <td>叙事、样式、iframe 与路由、部署联调</td>
+                <td>赵婉彤、向左</td>
+              </tr>
+              <tr>
+                <td>社会 / 教育 / 安全</td>
+                <td>四张主图数据与页面</td>
+                <td>向左</td>
+              </tr>
+              <tr>
+                <td>经济（nyc-pulse）</td>
+                <td>分层地图、散点、行业切换、刷选</td>
+                <td>郑舒涵</td>
+              </tr>
+              <tr>
+                <td>环境</td>
+                <td>评分管线、ZIP 对齐、地图与雷达、设施图层</td>
+                <td>朱写</td>
+              </tr>
+              <tr>
+                <td>交通</td>
+                <td>等时圈、客流、多模态、支付与推荐</td>
+                <td>赵婉彤</td>
+              </tr>
+              <tr>
+                <td>终章</td>
+                <td>四维汇总、堆叠图、权重逻辑</td>
+                <td>郑舒涵</td>
+              </tr>
+              <tr>
+                <td>说明文档</td>
+                <td>小组说明文档整合</td>
+                <td>朱写</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>4.2 小组整体开发流程概述</h3>
+          <p>
+            小组采用子项目并行与主站后期整合相结合的路径：各模块先在独立仓库达到可演示状态，再汇入统一叙事。整体过程可分为下列阶段，阶段之间允许重叠，不必理解为严格瀑布模型。
+          </p>
+          <p>
+            <strong>立项与讨论阶段</strong>，组内对齐宜居与选址这一主问题以及社会、经济、环境、交通四条叙事线，明确各模块边界以避免主题重复，例如环境模块与人口或地铁主题的划界。同时确认空间主键采用 ZIP 还是 MODZCTA 等方案，并列出作业交付清单，包括可访问 URL、说明文档与数据来源表。整体工时约10小时
+          </p>
+          <p>
+            <strong>数据源收集阶段</strong>，各模块负责人整理原始下载链接、字段含义、时间窗口与缺失值策略。清洗与空间对齐往往是个人时间占比最高的环节，不同来源可能在 Borough、ZIP 或点要素等粒度上不一致，需要统一或书面注明近似假设，例如 Borough 级空气指标映射回 ZIP 时的平滑误差。约定静态产物采用 CSV、GeoJSON 或 JSON 等格式及存放路径，便于主站或 iframe 引用。
+          </p>
+          <p>
+            <strong>并行开发阶段</strong>，社会模块完成四张图的数据处理与联动视图；经济模块完成分层地图、散点、行业切换与 Shift 刷选等；环境模块完成 Python 评分管线、Leaflet 分区着色地图、D3 雷达与公共设施图层；交通模块完成等时圈、赛跑模拟、客流与支付以及安家推荐；终章模块完成四维汇总与堆叠柱状图，并与经济或主站同学对齐配色与叙事语气。
+          </p>
+          <p>
+            <strong>集成与联调阶段</strong>，主站通过 iframe、外链或统一导航串联各章，统一美术风格，统一叙事逻辑，并做一次口径一致性检查，例如同一 Borough 或 ZIP 在不同章节的颜色语义是否自洽，文案与图表标题是否统一。
+          </p>
+          <p>
+            <strong>测试与文案阶段</strong>，邀请不熟悉代码的同学试读，检验能否完成操作与解读。完成 GitHub Pages 或同类静态托管部署，定稿小组说明文档，分工准备答辩材料与录屏。
+          </p>
+          <p>
+            工时方面，组内选题与讨论约占每人四至十二人小时，依会议频次浮动。数据清洗与空间对齐常占个人时间的最大块，约八至二十四人小时每人。前端实现与交互打磨约十至三十人小时每人，详见下一节。主站整合与全组联调约六至二十人小时，含 iframe、终章与样式统一。
+          </p>
+          
+
+          <h3>4.3 个人开发流程</h3>
+          <p>下文根据各成员自述或说明材料整理。</p>
+
+          <div class="person-block">
+            <strong>赵婉彤 · 主站整合协助与交通及多模态子系统</strong>
+            <p>
+              问题与设计见上文 3.5 节；河流图与堆叠面积图、路网连线与 payment_method 等替代方案的完整论述以在线文档
+              <a href="https://wfmitf.github.io/nyc-pulse/documentation" target="_blank" rel="noopener noreferrer">nyc-pulse documentation</a>
+              为准。交通应用本体由本人独立全栈完成，涵盖数据清洗、空间联表、OD 与最短路径矩阵、前端界面与 D3 复杂渲染。全生命周期约七十工时。
+            </p>
+            <p>
+              耗时最多的三块分别是：空间联表与降维预处理约二十小时，使用 Pandas 清洗数据，在四百余个站点上运行 Dijkstra 计算最短耗时，用 GeoPandas 做空间插值，并把出租车分区与地铁坐标等映射到 Zip Code；D3 渲染性能优化约十小时，通过减轻 Vue 深度响应式与 D3 绑定负担，改善时间轴拖拽时的帧率；界面与逻辑重构约四十小时，包括色标校准、安家推荐的多目标加权，即交通分与反距离加权商圈分相结合，以及多模态动画与商区及通勤路线的呈现迭代。
+            </p>
+          </div>
+
+          <div class="person-block">
+            <strong>向左 · 主站整合协助与第一篇章社会底色四图</strong>
+            <p>
+              第一篇章主要探索和展示纽约各 ZIP Code 的社会人文底色，包括人口的时空分布情况、教育水平分布和公共安全水平。首先，数据下载和数据处理阶段，下载了 ACS 5-year 的族裔与人口时间序列、DOE K–12 年义务教育学校、College Scorecard 高等学府与 NYPD Complaint 犯罪率数据，并根据 MODZCTA 将数据统计单位统一映射到 ZIP Code 邮政编码区，约 8 小时。接着，根据数据特点和想呈现的数据维度选定图表类型，筛选数据维度映射构建图表，约 12 小时。最后，增加和完善图表的交互逻辑，细化图表细节设计，约 12 小时。共约 32 小时。
+            </p>
+            <p>
+              主站整合部分，首先根据队友整理的串联设计文档构建主页面总体框架，敲定整体页面布局的宽度、模块顺序、封面设计等，约 3 小时。接着，细化调整每一个模块的图表窗口接入，调整子模块图表的页面布局以适应窗口大小，删减部分图表的文字说明窗口，测试验证交互逻辑功能能正确实现，约 18 小时。最后，加入图表下方的数据分析文字说明，调整每篇章标题格式等，约 5 小时。共约 26 小时。
+            </p>
+          </div>
+
+          <div class="person-block">
+            <strong>郑舒涵 · 经济账本与终章</strong>
+            <p>
+              有效工时合计约四十五小时：前期侧重数据收集、指标设计、清洗与初版界面，中后期侧重页面优化、交互缺陷修复、GitHub Pages 部署与文档撰写。日程上第一天约六小时，第二天约十六小时，第三天约三小时。耗时最多的是页面布局迭代，以及地图缩放、刷选、联动与 tooltip 等多路事件之间的顺序与状态源一致性调试。
+            </p>
+          </div>
+
+          <div class="person-block">
+            <strong>朱写 · 环境模块</strong>
+            <p>
+              整体节奏边做边调整，依次经历数据查找与处理、前端搭建、交互打磨与叙事优化，叙事优化贯穿后期。选题与找数据耗时超出最初预期，先在纽约生活体验方向发散，随后在 Kaggle 锁定空气质量、311 投诉与树木普查三类公开数据，难点在于三者字段格式、粒度与命名不一致，无法直接拼接。
+            </p>
+            <p>
+              数据处理工作量也比预想更大，需把三类数据统一对齐到 ZIP Code，并将空气、噪音与绿化转为可比的零到一百分，反复核对字段、缺失与合并结果，避免出现能运行但结论不可靠的情况。前端先实现地图、区域绑定与悬停信息的最小可用版本，再补充雷达图、页首说明与底部数据速览。交互上修复选中高亮残留、取消选中后雷达图状态错误以及区块描边发黑等问题，地图样式与点击逻辑经过多轮测试。叙事上补充导读、数据来源说明与区域解释文字。
+            </p>
+            <p>
+              工具方面主要借助 Cursor 搭建骨架；编写程序约10小时，数据处理约3小时，交互细节与文案约10小时；核心时段合计约30小时，包含返工的边际时间。
+            </p>
+          </div>
+        </section>
+
+        <section id="s5">
+          <span class="chapter-tag">DATA SOURCES</span>
+          <h2>五、数据来源与引用</h2>
+
+          <h3>5.1 原则</h3>
+          <p>
+            各模块的数据逻辑与算法由小组自主实现；底层数据来自下列公开平台。若同一指标存在多个版本，以各子项目 README 或数据处理脚本中的选用版本为准。
+          </p>
+
+          <h3>5.2 社会、教育与公共安全</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>用途</th>
+                <th>来源</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>总人口与族裔等 ACS 指标</td>
+                <td><a href="https://www.census.gov/data/developers/data-sets/acs-5year.html">ACS 5-Year API / Data Sets</a></td>
+              </tr>
+              <tr>
+                <td>纽约市五区边界</td>
+                <td><a href="https://data.cityofnewyork.us/City-Government/Borough-Boundaries/gthc-hcne">Borough Boundaries</a></td>
+              </tr>
+              <tr>
+                <td>K–12 公立学校点位</td>
+                <td>
+                  <a href="https://data.cityofnewyork.us/Education/NYC-DOE-Public-School-Location-Information/3bkj-34v2">NYC DOE Public School Location Information</a>
+                </td>
+              </tr>
+              <tr>
+                <td>高校 Scorecard</td>
+                <td><a href="https://data.ed.gov/dataset/college-scorecard-all-data-files/">College Scorecard — All Data Files</a></td>
+              </tr>
+              <tr>
+                <td>历史报警与犯罪</td>
+                <td><a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i/about_data">NYPD Complaint Data Historic</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>5.3 地图与邮编几何</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>用途</th>
+                <th>来源</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>MODZCTA</td>
+                <td>
+                  <a href="https://data.cityofnewyork.us/Health/Modified-Zip-Code-Tabulation-Areas-MODZCTA-Map/5fzm-kpwv">Modified Zip Code Tabulation Areas Map</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>5.4 经济与住房补充来源</h3>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>用途</th>
+                <th>来源</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>租金与房价：纽约邮编及近期房租等</td>
+                <td><a href="https://www.zillow.com/research/data/">Zillow Research Data</a></td>
+              </tr>
+              <tr>
+                <td>行业代码、企业数与所发工资总额（纽约州 QCEW）</td>
+                <td>
+                  New York State Department of Labor —
+                  <a href="https://dol.ny.gov/quarterly-census-employment-and-wages-qcew">Quarterly Census of Employment and Wages (QCEW)</a>
+                </td>
+              </tr>
+              <tr>
+                <td>地图边界：邮编统计区面域</td>
+                <td>
+                  与 5.3 相同，
+                  <a href="https://data.cityofnewyork.us/Health/Modified-Zip-Code-Tabulation-Areas-MODZCTA-Map/5fzm-kpwv">NYC Open Data — MODZCTA Map</a>
+                </td>
+              </tr>
+              <tr>
+                <td>商业分布：纽约邮编、行业与单位个数</td>
+                <td>
+                  U.S. Census Bureau —
+                  <a href="https://www.census.gov/programs-surveys/cbp/data/data-sets.html">County Business Patterns (CBP)</a>
+                </td>
+              </tr>
+              <tr>
+                <td>NAICS 代码与行业名称对照</td>
+                <td>
+                  U.S. Bureau of Labor Statistics —
+                  <a href="https://www.bls.gov/iag/titles.htm">Industry titles / NAICS</a>
+                  （页面提供可下载 CSV 等格式，具体文件名以 BLS 当前发布为准）
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>5.5 环境与公共设施</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>用途</th>
+                <th>来源</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>空气质量示例集</td>
+                <td><a href="https://www.kaggle.com/datasets/kaggleprollc/air-quality-data-nyc">Air Quality Data NYC（Kaggle）</a></td>
+              </tr>
+              <tr>
+                <td>311</td>
+                <td><a href="https://www.kaggle.com/datasets/shubhammore12/nyc-311-customer-service-requests-analysis?resource=download">NYC 311（Kaggle）</a></td>
+              </tr>
+              <tr>
+                <td>树木普查</td>
+                <td><a href="https://www.kaggle.com/datasets/nycparks/tree-census">Tree Census（Kaggle）</a></td>
+              </tr>
+              <tr>
+                <td>降温点</td>
+                <td><a href="https://data.cityofnewyork.us/dataset/Cool-It-NYC-2020-Cooling-Sites/h2bn-gu9k">Cool It! NYC 2020 - Cooling Sites</a></td>
+              </tr>
+              <tr>
+                <td>公厕</td>
+                <td><a href="https://data.cityofnewyork.us/City-Government/Public-Restrooms/i7jb-7jku/about_data">Public Restrooms</a></td>
+              </tr>
+              <tr>
+                <td>饮水点</td>
+                <td><a href="https://data.cityofnewyork.us/Recreation/NYC-Parks-Drinking-Fountains/qnv7-p7a2">Drinking Fountains</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>5.6 交通、出行与商圈</h3>
+        
+          <table>
+            <thead>
+              <tr>
+                <th>用途</th>
+                <th>来源</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Citi Bike</td>
+                <td><a href="https://citibikenyc.com/system-data">Citi Bike System Data</a></td>
+              </tr>
+              <tr>
+                <td>商区与许可证点位</td>
+                <td><a href="https://data.cityofnewyork.us/Business/Issued-Licenses/w7w3-xahh/about_data">Issued Licenses</a></td>
+              </tr>
+              <tr>
+                <td>TLC 行程</td>
+                <td><a href="https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page">TLC Trip Record Data</a></td>
+              </tr>
+              <tr>
+                <td>Borough GeoJSON</td>
+                <td><a href="https://data.cityofnewyork.us/City-Government/Borough-Boundaries/gthc-hcne">Borough Boundaries</a></td>
+              </tr>
+              <tr>
+                <td>地铁站</td>
+                <td><a href="https://data.ny.gov/Transportation/MTA-Subway-Stations/39hk-dx4f/data_preview">MTA Subway Stations</a></td>
+              </tr>
+              <tr>
+                <td>小时客流</td>
+                <td>
+                  <a href="https://data.ny.gov/Transportation/MTA-Subway-Hourly-Ridership-Beginning-2025/5wq4-mkjj/data_preview">MTA Subway Hourly Ridership Beginning 2025</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>5.7 工具、库与案例参考</h3>
+          <p>
+            地图与可视化常用
+            <a href="https://leafletjs.com/">Leaflet</a>、
+            <a href="https://d3js.org/">D3.js</a>，字体可选用
+            <a href="https://fonts.google.com/">Google Fonts</a>，底图可参考
+            <a href="https://www.openstreetmap.org/">OpenStreetMap</a>
+            并遵守 OSM 署名要求。叙事结构参考
+            <a href="https://polakowo.io/gtd-analysis/project/">GTD Interactive Analysis</a>
+            的章节组织思路；版式节奏可参考
+            <a href="https://mbtaviz.github.io/">MBTA Viz</a>。组内相关链接包括
+            <a href="https://chenyao2005.github.io/Visualization-Work3/">Visualization-Work3</a>
+            与
+            <a href="https://wfmitf.github.io/nyc-pulse/">nyc-pulse</a>。
+          </p>
+        </section>
+
+       
+      </article>
+
+      
+    </div>
+  </body>
+</html>

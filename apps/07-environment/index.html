@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>纽约城市环境 · 交互探索 | NYC Urban Environment</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      if (new URLSearchParams(window.location.search).get("embed") === "1") {
+        document.documentElement.classList.add("embed-mode");
+      }
+    </script>
+    <link rel="stylesheet" href="./styles.css?v=20260502-0315" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <p class="eyebrow">NYC Urban Environment · Interactive Explorer</p>
+        <h1>纽约城市环境：交互式一览</h1>
+        <p class="subtitle">
+          为正在了解纽约的你准备：用地图快速感受各纽约各区（按邮政编码划分）在<strong>空气</strong>、<strong>安静程度</strong>与<strong>绿荫</strong>上的相对表现。你可以先设置分数底线，再结合筛选条件，观察哪些区域被保留或淘汰，从而判断限制你的关键维度。
+        </p>
+        <aside class="doc-spotlight" aria-label="说明文档入口">
+          <p class="doc-spotlight-copy">
+            <strong>说明文档</strong>：设计思路、指标口径、外部资源与开发过程已单独成页，便于对照作业要求阅读。
+          </p>
+          <a class="doc-spotlight-btn" href="./submission.html">打开《说明文档》</a>
+        </aside>
+        <nav class="toc" aria-label="页面目录">
+          <span class="toc-label">本页导读</span>
+          <a href="#section-explore">1. 如何交互探索</a>
+          <a href="#section-map">2. 地图与雷达图</a>
+          <a class="toc-doc" href="./submission.html">提交说明文档</a>
+        </nav>
+        <div class="hero-grid">
+          <div class="hero-item">
+            <span class="k">你想了解的是</span>
+            <strong>各区环境哪里更舒心？短板是空气、噪音还是绿化？可作为选区对比起点。</strong>
+          </div>
+          <div class="hero-item">
+            <span class="k">背后数据</span>
+            <strong>空气质量 · 311 噪音相关诉求 · 绿化普查</strong>
+          </div>
+          <div class="hero-item">
+            <span class="k">阅读方式</span>
+            <strong>颜色体现综合环境分；右侧雷达为细项指标对比</strong>
+          </div>
+        </div>
+      </header>
+
+      <section id="section-explore" class="panel sidebar sidebar-filters">
+          <h2>1. 过滤器</h2>
+          <div class="filters-grid">
+            <div class="filters-left">
+              <label class="control-item control-slider">
+                <span class="control-label">只显示分数不低于</span>
+                <input id="scoreRange" type="range" min="0" max="100" value="30" step="1" />
+                <strong id="scoreLabel" class="score-badge">30</strong>
+              </label>
+              <label class="control-item control-slider">
+                <span class="control-label">公共设施图层透明度</span>
+                <input id="layerOpacityRange" type="range" min="20" max="100" value="85" step="1" />
+                <strong id="layerOpacityLabel" class="score-badge">85%</strong>
+              </label>
+            </div>
+            <div class="filters-right">
+              <div class="scenario" role="group" aria-label="场景预设">
+                <span class="control-label">场景预设</span>
+                <button class="btn" id="presetBalanced" type="button">平衡</button>
+                <button class="btn" id="presetQuiet" type="button">需要安静</button>
+                <button class="btn" id="presetFacilities" type="button">日常便利</button>
+              </div>
+              <div class="controls-chips" role="group" aria-label="附加筛选条件">
+                <label class="control-item chip"><input id="airCheck" type="checkbox" /> <span>空气质量较好（≥60）</span></label>
+                <label class="control-item chip"><input id="noiseCheck" type="checkbox" /> <span>相对更安静（≥60）</span></label>
+                <label class="control-item chip"><input id="greenCheck" type="checkbox" /> <span>绿荫相对更丰富（≥60）</span></label>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <main class="content" id="section-map">
+        <div class="map-wrap panel">
+          <div class="map-head">
+            <h2>2. 邮政编码区域环境综合分分布</h2>
+            <p class="map-deck">
+              每个色块对应一个邮政编码区域。悬停或点选时，会显示该区域在边界数据中附带的地名（邮局常用名+ 行政区），便于和日常说的街区对照；该名称是近似参考，不等同于官方邻里边界。颜色越偏绿表示综合环境分越高；筛选后未达条件的区域会淡化。
+            </p>
+          </div>
+          <div id="map"></div>
+          <div class="map-legend" role="img" aria-label="地图颜色图例">
+            <span class="legend-title">综合分（示意）</span>
+            <div class="legend-bar">
+              <span class="l l1"></span><span class="l l2"></span><span class="l l3"></span><span class="l l4"></span><span class="l l5"></span><span class="l l6"></span><span class="l l7"></span><span class="l l8"></span>
+            </div>
+            <div class="legend-labels"><span>较低</span><span>较高</span></div>
+          </div>
+        </div>
+        <div class="side-stack">
+          <aside class="panel sidebar sidebar-facilities">
+            <h2>公共设施图层说明</h2>
+            <p>
+              可勾选降温点/公厕/饮水点叠加点位。该图层用于观察「服务覆盖」与区域分数之间的关系，
+              例如：高环境分区域是否同时拥有更密集的基础设施。
+            </p>
+            <div class="facility-toggles facility-toggles--stack" role="group" aria-label="公共设施图层">
+              <label class="control-item chip chip--ghost"><input id="layerCooling" type="checkbox" /> <span>降温点（Cooling Sites）</span></label>
+              <label class="control-item chip chip--ghost"><input id="layerRestrooms" type="checkbox" checked /> <span>公厕（Public Restrooms）</span></label>
+              <label class="control-item chip chip--ghost"><input id="layerFountains" type="checkbox" /> <span>饮水点（Drinking Fountains）</span></label>
+            </div>
+          </aside>
+
+          <div class="panel radar-panel">
+            <div class="radar-head">
+              <h2 id="radarTitle">区域环境画像</h2>
+              <p class="radar-deck">
+                三个轴分别对应空气、安静度与绿荫；图形越饱满表示该邮政编码区域在三个维度上越均衡或整体偏高。
+              </p>
+            </div>
+            <div class="radar-svg-wrap">
+              <svg id="radar" width="420" height="360" viewBox="0 0 420 360"></svg>
+            </div>
+            <div id="meta" class="meta-card" aria-live="polite"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="./main.js?v=20260502-0315"></script>
+  </body>
+</html>

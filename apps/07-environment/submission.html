@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>提交说明文档 | 纽约城市环境交互可视化</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="submission-body">
+    <div class="page submission-page">
+      <header class="hero">
+        <p class="eyebrow">Submission Notes · NYC Urban Environment</p>
+        <h1>提交说明文档</h1>
+        <p class="subtitle">
+          本页用于配合作业提交，说明本项目试图回答的问题、设计决策、数据与外部资源来源，以及开发过程概述。
+        </p>
+        <nav class="toc" aria-label="页面目录">
+          <span class="toc-label">快速跳转</span>
+          <a href="#question">1. 回答什么问题</a>
+          <a href="#design">2. 设计与技术选择</a>
+          <a href="#sources">3. 外部资源与数据</a>
+          <a href="#process">4. 开发过程概述</a>
+          <a href="./index.html">返回可视化主页</a>
+        </nav>
+      </header>
+
+      <section id="question" class="panel prose">
+        <h2>1. 我的可视化方案旨在回答什么问题？</h2>
+        <p class="lead">
+          本项目主要面向想快速了解纽约城市环境的普通访客，核心问题是：
+          <strong>如果从空气质量、相对安静程度与绿荫覆盖三个角度来看，纽约不同邮政编码区域的城市环境差异是什么？</strong>
+        </p>
+        <p>
+          同时我希望通过这个可视化还能帮助用户回答以下几个子问题：
+        </p>
+        <ol class="data-source-list">
+          <li>纽约哪些邮政区域在整体环境综合分上相对更高，哪些区域相对更弱？</li>
+          <li>某一区域的短板主要来自空气、噪音，还是绿化？</li>
+          <li>当用户对环境有不同偏好时，筛选结果会如何变化？这一点我希望考虑不同用户的需求，比如有的人会更在意空气质量，有的会更在意安静。</li>
+          <li>用户能否通过一张地图快速缩小感兴趣的候选区域，再通过雷达图理解该区域的环境画像？</li>
+        </ol>
+        <p>
+          因此，本项目不是试图完整描述纽约所有城市环境问题，而是构建一个交互入口，让用户能够围绕自身关注点主动发掘自己希望的生活环境。
+        </p>
+      </section>
+
+      <section id="design" class="panel prose">
+        <h2>2. 设计决策的依据、可视化选择与交互技术</h2>
+        <p class="lead">
+          设计上我参考了一个数据叙事型交互分析页面
+          <a href="https://polakowo.io/gtd-analysis/project/" target="_blank" rel="noopener noreferrer">Global Terrorism Database: Interactive Analysis</a>
+          的结构：先说明问题与数据，再提供交互入口，最后让用户通过地图与图形完成探索。
+        </p>
+        <p>
+          首先我选择了地图作为交互式可视化的主视图，这是因为用户如果想了解纽约城市环境，最自然的方式就是先看空间分布。其实最开始我也考虑过用柱状图、散点图作为主视图，但考虑到这个项目的主题是“城市环境”，空间信息才是最重要的一层，因此最后还是决定优先做地图。
+        </p>
+        <p>
+          同时，邮政编码区域也比较适合做区域比较，某种程度上这也是因为我最后能稳定整理出来的数据基本都是按 ZIP code 对齐的。所以我采用 choropleth 地图来展示综合分布，帮助用户快速找到高分区和低分区。
+        </p>
+        <p>
+          然后我又给每个区域配了一个小雷达图，因为单靠地图只能看到综合分，无法直接看出某一区域到底是空气更好、安静度更高，还是绿化更强。雷达图虽然不适合放很多维度，但这次只有三个维度，反而很适合用来做一个直观的补充比较。
+        </p>
+        <p>
+          在确定了地图和雷达图之后，我还是觉得交互不够，所以又加了阈值滑块和三个勾选条件。这组交互可以让用户先设一个综合底线，再叠加自己更在意的偏好，从而逐步缩小范围。我觉得这种方式比直接堆很多筛选项更清楚，也更符合课程要求里提到的动态查询过滤器。
+        </p>
+        <p>
+          技术选择上，我前端使用原生 HTML、CSS、JavaScript；地图使用 <a href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">Leaflet</a>；图形绘制与数据读取使用 <a href="https://d3js.org/" target="_blank" rel="noopener noreferrer">D3.js</a>。没有使用 Vue、React 等框架，原因是本项目页面结构比较明确、状态也不算复杂，原生实现更轻量，也更适合部署到 GitHub Pages 这样的纯静态环境。
+        </p>
+      </section>
+
+      
+      <section id="process" class="panel prose">
+        <h2>3. 开发流程概述</h2>
+        <p class="lead">
+          这个项目并不是我一开始就想得很完整，而是边做边调整出来的。主要还是能分成数据查找和处理、前端设计、交互细节调整和页面叙事优化四个阶段。
+        </p>
+     <p>一开始选题和找数据时，其实就花了不少时间。
+      我最开始只是想做一个和纽约生活体验有关的可视化，但并没有马上确定到底要看什么指标，直接在kaggle上以纽约做关键词，发现空气质量、311 投诉和树木普查这三类数据都比较公开，而且都能和“城市环境”联系起来，所以最后决定围绕这三个维度做。这里面最麻烦的是，它们的字段格式、粒度和命名都不太一样，不是拿来就能直接拼在一起。
+    </p>
+    <p>然后就到了数据处理阶段，这些比我原来预想得更花时间。
+            我本来以为主要工作会在前端展示上，但真正开始做之后发现，前面的清洗和对齐才是最花精力的部分。因为三个数据集不是天然按同一种空间单位组织的，所以我最后统一按 ZIP code 来整理，再把空气、噪音和绿化转成可以横向比较的分数。这个过程中我反复检查过字段、缺失值和合并结果，不然前端显示出来虽然能跑，但结论会不太可信。
+    </p>
+    <p>前端最开始做得其实比较朴素，
+            一开始我先让地图能够正常显示，再把每个区域对应的数据绑上去，确认鼠标悬停时至少能看到基本信息。之后我才慢慢往右侧补雷达图、顶部说明、底部数据速览这些内容。也就是说，我不是先把整页设计完再一次性实现，而是先做出一个最小可运行版本，再一点点补功能。
+    </p>
+    <p>
+            交互细节的调试主要有，
+            比如选中某个区域后，之前选中的高亮没有消失；有时候取消选中后，右侧雷达图还停留在上一个区域；还有地图区块会出现奇怪的黑边。这些都不是特别大的功能，但真的很影响使用体验。我后面花了不少时间在这种“小问题”上反复测试和修改，尤其是地图图层样式和点击逻辑这一块。
+    </p>
+    <p>
+      最后我才开始认真改文案和页面结构，原本页面更像“把图放上去就结束了”，但后来我觉得如果站在一个普通用户的角度，他不一定知道这个图该怎么看。所以我又补了导读、数据来源说明、每个区域的解释文字，还把整页调整成更像一个可阅读的交互分析页面，而不是单独几张图的拼接。
+    </p>
+        <p>
+          在编写程序上，因为我主要使用Cursor进行编程，只有给出想法，cursor整体的代码骨架都能搭好，写代码的时间大概有3个小时左右，但是前面想选题就花了2个小时左右，做数据处理约1.5h，最耗时的是调整交互细节和页面文案，约4h。很多时候不是不会做，而是做出结果后发现用户视角下不够顺，或者看上去不像一个完整作品，所以后面又来回改了很多轮。
+        </p>
+      </section>
+
+      <section id="sources" class="panel prose">
+        <h2>4. 外部资源引用</h2>
+        <p class="lead">
+          本项目使用了公开数据、第三方前端库、在线字体与地图底图服务，具体如下。
+        </p>
+        <ul class="data-source-list">
+          <li>
+            <strong>数据集：</strong>
+            <a href="https://www.kaggle.com/datasets/kaggleprollc/air-quality-data-nyc" target="_blank" rel="noopener noreferrer">Air Quality Data NYC</a>、
+            <a href="https://www.kaggle.com/datasets/shubhammore12/nyc-311-customer-service-requests-analysis?resource=download" target="_blank" rel="noopener noreferrer">NYC 311 Customer Service Requests Analysis</a>、
+            <a href="https://www.kaggle.com/datasets/nycparks/tree-census" target="_blank" rel="noopener noreferrer">NYC Parks Tree Census</a>。
+          </li>
+          <li>
+            <strong>地图底图：</strong>
+            <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>。
+          </li>
+          <li>
+            <strong>地图与可视化库：</strong>
+            <a href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">Leaflet</a>、
+            <a href="https://d3js.org/" target="_blank" rel="noopener noreferrer">D3.js</a>。
+          </li>
+          <li>
+            <strong>在线字体：</strong>
+            <a href="https://fonts.google.com/specimen/DM+Sans" target="_blank" rel="noopener noreferrer">DM Sans</a> 与 <a href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener noreferrer">Inter</a>。
+          </li>
+          <li>
+            <strong>设计参考：</strong>
+            页面叙事结构参考了 [Global Terrorism Database: Interactive Analysis](https://polakowo.io/gtd-analysis/project/)，主要借鉴其“问题导向 + 数据说明 + 图表解释 + 交互探索”的组织方式，而非直接复制其视觉样式或代码。
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </body>
+</html>
